@@ -1,0 +1,56 @@
+@media screen and (max-width: 350px) {
+  .up-menu__left::after {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .up-menu__social-menu {
+    display: none;
+  }
+}
+@media screen and (min-width: 600px) {
+  .main {
+    gap: 2rem;
+  }
+  .main__content {
+    @include  display-flex(row);
+    justify-content: space-between;
+    gap: 48px;
+  }
+  .content__text-block {
+    flex-basis: 50%;
+  }
+  .main__banner {
+    flex-basis: 50%;
+    min-height: 305px;
+    border-radius: 0.5rem;
+  }
+  .content__article {
+    max-height: 160px;
+  }
+}
+@media screen and (min-width: 1120px) {
+  .page__up-menu,
+  .fade-place__fade {
+    display: none;
+  }
+  .main {
+    gap: 2rem;
+  }
+  .header__menu-small {
+    @include  display-flex(row);
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    padding-right: 2rem;
+  }
+  .menu-small__button-define {
+    @include  display-flex(row);
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+  }  
+  .main__h-scroll-menu {
+    flex-wrap: wrap;
+  }
+}

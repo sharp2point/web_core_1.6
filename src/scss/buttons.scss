@@ -1,0 +1,85 @@
+.button{
+  min-width: fit-content;  
+  font-family: "TT Lakes";
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.2px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: $white-color;
+  border: none;  
+  cursor: pointer;
+}
+.button_type--border{
+  height: 40px;
+  padding: 0.5rem 1rem;
+  background: $background-color;
+  color: $button-border-color;
+}
+.button_type--border--active {
+  background: $white-color;
+  color: $button-border-color;
+  padding: 0.5rem 1rem;
+  border: 2px solid $active-border-button-color;
+  border-radius: 6px;
+}
+.button_type--circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: $button-circle-background;
+  transition: 0.25s;
+}
+.button_type--circle:hover {
+  transform: scale(0.9) rotate(5deg);
+  box-shadow: 0 0 10px 0 rgba(150, 150, 150, 0.5),
+    0 0 15px 0px rgba(20, 20, 20, 0.5);
+}
+.button-arrow{
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.2px;
+  color: $content-text-color;
+}
+.button-arrow::before{
+  @include arrow;
+  transform: translate(-16px, 4px) rotate(45deg);
+}
+.button-arrow::after{
+  @include arrow;
+  transform: translate(-116px, 12px) rotate(45deg);
+}
+/* ------------- SET ICON ---------------------- */
+.up-menu__button-burger {
+  background-image: url("#{$icon-path}/burger.svg");
+}
+.up-menu__button-call,
+.mobile-menu__button-call {
+  background-image: url("#{$icon-path}/call.svg");
+}
+.up-menu__button-chat,
+.mobile-menu__button-chat {
+  background-image: url("#{$icon-path}/chat.svg");
+}
+.up-menu__button-profile,
+.mobile-menu__button-profile {
+  background-image: url("#{$icon-path}/profile.svg");
+}
+.up-menu__button-repair {
+  background-image: url("#{$icon-path}/repair.svg");
+}
+.up-menu__button-checkstatus {
+  background-image: url("#{$icon-path}/checkstatus.svg");
+}
+.menu-small__button-repair {
+  background-image: url("#{$icon-path}/repair.svg");
+}
+.menu-small__button-checkstatus {
+  background-image: url("#{$icon-path}/checkstatus.svg");
+}
+.mobile-menu__button-close {
+  background-image: url("#{$icon-path}/close.svg");
+}
+.mobile-menu__button-search {
+  background-image: url("#{$icon-path}/search.svg");
+}

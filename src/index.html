@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <title>Document</title>
+  </head>
+  <body class="page">
+    <!------- UP MENU ------------>
+    <div class="page__up-menu up-menu">
+      <div class="up-menu__left">
+        <button
+          class="up-menu__button-burger button button_type--circle"
+        ></button>
+      </div>
+
+      <div class="up-menu__center">
+        <div class="up-menu__logo logo">
+          <img class="logo__image" src=<%=require("./img/CPS_logo.svg")%>
+          alt="logo CPS" />
+        </div>
+        <div class="up-menu__social-menu">
+          <button
+            class="up-menu__button-call button button_type--circle"
+          ></button>
+          <button
+            class="up-menu__button-chat button button_type--circle"
+          ></button>
+          <button
+            class="up-menu__button-profile button button_type--circle"
+          ></button>
+        </div>
+      </div>
+
+      <div class="up-menu__right">
+        <button
+          class="up-menu__button-repair button button_type--circle"
+        ></button>
+        <button
+          class="up-menu__button-checkstatus button button_type--circle"
+        ></button>
+      </div>
+    </div>
+    <!------- MAIN BLOCK --------->
+    <main class="main">
+      <header class="main__header header">
+        <h1 class="header__text">Услуги и сервисы</h1>
+
+        <!-- Меню отображается на [width > 1100] -->
+        <div class="header__menu-small menu-small">
+          <div class="menu-small__button-define">
+            <span class="button__text">Оставить заявку</span>
+            <button
+              class="menu-small__button-repair button button_type--circle"
+            ></button>
+          </div>
+          <div class="menu-small__button-define">
+            <span class="button__text">Статус ремонта</span>
+            <button
+              class="menu-small__button-checkstatus button button_type--circle"
+            ></button>
+          </div>
+        </div>
+      </header>
+
+      <div class="main__h-scroll-menu h-scroll-menu">
+        <button
+          class="h-scroll-menu__button button button_type--border--active"
+        >
+          Ремонтируемые устройства
+        </button>
+        <button class="h-scroll-menu__button button button_type--border">
+          Дополнительные услуги
+        </button>
+        <button class="h-scroll-menu__button button button_type--border">
+          Цены на услуги
+        </button>
+        <button class="h-scroll-menu__button button button_type--border">
+          Адреса сервисных центров
+        </button>
+        <button class="h-scroll-menu__button button button_type--border">
+          Специальные цены
+        </button>
+        <button class="h-scroll-menu__button button button_type--border">
+          Отзывы
+        </button>
+      </div>
+
+      <div class="main__content content">
+        <div class="content__text-block">
+          <article class="content__article">
+            <p class="content__article-paragraph">
+              Мы являемся авторизованным сервисным центром по ремонту техники
+              Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
+              официальной гарантией производителя.
+            </p>
+            <p class="content__article-paragraph">
+              Мы успешно работаем с 1992 года и заслужили репутацию надежного
+              партнера, что подтверждает большое количество постоянных клиентов.
+              Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою
+              очередь, советуют нас родным и близким.
+            </p>
+          </article>
+
+          <button class="content__button-arrow button button-arrow">
+            Читать далее
+          </button>
+        </div>
+        <img class="main__banner" src=<%=require("./img/banner.jpg")%>
+        alt="изображение с табличкой CPS">
+      </div>
+    </main>
+
+    <!------- SCROLL BRANDS ------>
+    <div class="services">
+      <header class="services__header">
+        <h3 class="services__header-text">ремонт техники различных брендов</h3>
+      </header>
+      <div class="services__brands brands">
+        <div class="wrapper">
+          <div class="brands__item">
+            <div class="brand">
+              <img
+                src=<%=require("./img/brand/sony.png")%>
+                alt="image brand"
+                class="brand__image"
+              />
+              <button class="brand__button"></button>
+            </div>
+          </div>
+
+          <div class="brands__item">
+            <div class="brand">
+              <img
+                src=<%=require("./img/brand/aser.png")%>
+                alt="image brand"
+                class="brand__image"
+              />
+              <button class="brand__button"></button>
+            </div>
+          </div>
+
+          <div class="brands__item">
+            <div class="brand">
+              <img
+                src=<%=require("./img/brand/hp.png")%> 
+                alt="image brand"
+                class="brand__image"
+              />
+              <button class="brand__button"></button>
+            </div>
+          </div>
+
+          <div class="brands__item">
+            <div class="brand">
+              <img
+                src=<%=require("./img/brand/samsung.png")%>
+                alt="image brand"
+                class="brand__image"
+              />
+              <button class="brand__button"></button>
+            </div>
+          </div>
+
+          <div class="brands__item">
+            <div class="brand">
+              <img
+                src=<%=require("./img/brand/bosh.png")%>
+                alt="image brand"
+                class="brand__image"
+              />
+              <button class="brand__button"></button>
+            </div>
+          </div>
+
+          <div class="brands__item">
+            <div class="brand">
+              <img
+                src=<%=require("./img/brand/apple.png")%>
+                alt="image brand"
+                class="brand__image"
+              />
+              <button class="brand__button"></button>
+            </div>
+          </div>
+
+          <div class="brands__item">
+            <div class="brand">
+              <img
+                src=<%=require("./img/brand/lenovo.png")%>
+                alt="image brand"
+                class="brand__image"
+              />
+              <button class="brand__button"></button>
+            </div>
+          </div>
+
+          <div class="brands__item">
+            <div class="brand">
+              <img
+                src=<%=require("./img/brand/sony.png")%>
+                alt="image brand"
+                class="brand__image"
+              />
+              <button class="brand__button"></button>
+            </div>
+          </div>
+
+          <div class="brands__item">
+            <div class="brand">
+              <img
+                src=<%=require("./img/brand/aser.png")%>
+                alt="image brand"
+                class="brand__image"
+              />
+              <button class="brand__button"></button>
+            </div>
+          </div>
+
+          <div class="brands__item">
+            <div class="brand">
+              <img
+                src=<%=require("./img/brand/sony.png")%>
+                alt="image brand"
+                class="brand__image"
+              />
+              <button class="brand__button"></button>
+            </div>
+          </div>
+
+          <div class="brands__item">
+            <div class="brand">
+              <img
+                src=<%=require("./img/brand/bosh.png")%>
+                alt="image brand"
+                class="brand__image"
+              />
+              <button class="brand__button"></button>
+            </div>
+          </div>
+        </div>
+        <div class="brands__paginator swiper-pagination"></div>
+      </div>
+
+      <div class="services__button button button__arrow">Показать все</div>
+    </div>
+  </body>
+</html>
