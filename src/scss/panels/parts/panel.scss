@@ -5,9 +5,8 @@
   align-items: flex-start;
   gap: 1rem;
   background: white;
-  max-height: 800px;
   max-width: 1120px;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   @include block-shadow-line;
 }
 .panel__header {
@@ -31,7 +30,6 @@
 .panel__elements {
   @include display-flex(column);
   width: 100%;
-  height: 130px;
   gap: 1rem;
 }
 .panel__paginator--hide {

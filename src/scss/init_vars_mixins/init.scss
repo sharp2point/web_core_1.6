@@ -34,11 +34,13 @@
 }
 html {
   background: #1b1c21;
+
 }
 .page {
   margin-inline: auto;
   min-width: $page-min-width;
   max-width: $page-max-width;
   min-height: $page-min-height;
+  padding-bottom: 1rem;
   background: $background-color;
 }
