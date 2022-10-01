@@ -1,13 +1,14 @@
-export default function (class_element, is_open) {
+export default function (class_element,panel_switch_class, is_open) {
   let is_open_pnl = is_open;
+  let switch_class = panel_switch_class;
   let dom_el = document.querySelector(class_element);
 
   function open_or_close(is_open) {
     is_open_pnl = is_open
     if (is_open) {
-      dom_el.classList.remove("services__brands-large_close");
+      dom_el.classList.remove(switch_class);
     } else {
-      dom_el.classList.add("services__brands-large_close");
+      dom_el.classList.add(switch_class);
     }
     return is_open_pnl;
   }

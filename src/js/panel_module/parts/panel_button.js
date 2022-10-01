@@ -1,8 +1,9 @@
-export default function (class_element, panel, is_hide, is_open) {
-  let is_open_bt = is_open;
-  let is_hide_bt = is_hide;
-  let panel_control = panel;
-  let dom_el = document.querySelector(class_element);
+export default function (class_element,switch_button_class, panel, is_hide, is_open) {
+  let is_open_bt = is_open; // открытое/закрытое состояние
+  let is_hide_bt = is_hide; // показать/скрыть
+  let panel_control = panel; // панель привязанная к кнопке
+  let switch_button = switch_button_class; // стиль переключатель открытое/закрытое состояние
+  let dom_el = document.querySelector(class_element); // DOM элемент кнопки
 
   (function init(){
     open_or_close(is_open_bt);
@@ -23,10 +24,10 @@ export default function (class_element, panel, is_hide, is_open) {
     // направлениек стрелок
     is_open_bt = is_open;
     if (is_open) {      
-      dom_el.classList.add("button__arrow_open");
+      dom_el.classList.add(switch_button);
       dom_el.textContent = "Скрыть";
     } else {
-      dom_el.classList.remove("button__arrow_open");
+      dom_el.classList.remove(switch_button);
       dom_el.textContent = "Показать всё";
     }
     panel_control.open_or_close(is_open);
@@ -37,7 +38,8 @@ export default function (class_element, panel, is_hide, is_open) {
     is_open_bt = is_open_bt ? false : true;
     open_or_close(is_open_bt);
   }
-
+  dom_el.addEventListener("click",click_handler);
+  
   return {
     is_open: is_open_bt,
     is_hide: is_hide_bt,

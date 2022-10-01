@@ -15,10 +15,12 @@
 }
 
 @mixin arrow{
-  position: absolute;
   content: "";
+  border-left: 2px solid $header-mark-color;
+  border-top: 2px solid $header-mark-color;
   width: 5px;
   height: 5px;
-  border-bottom: 2px solid $header-mark-color;
-  border-right: 2px solid $header-mark-color;
+  transition: rotate 1s;
+  transform: rotate(-135deg);  
+  float: left;  
 }

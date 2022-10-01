@@ -1,34 +1,35 @@
-import ServicesArrowButton from "../panel_module/parts/services_arrow_button.js";
-import ServicesBrandPanel from "../panel_module/parts/services_brand_panel.js";
+import PanelButton from "./parts/panel_button.js";
+import Panel from "./parts/panel.js";
 
-class PanelModule {
+export default class PanelModule {
   constructor(
     panel_class, // класс элемента панели
+    switch_panel_class,
     button_class, // класс кнопки управления
+    switch_button_class
   ) {
     this.is_mobile_state;
 
-    this.panel = ServicesBrandPanel(panel_class, false); // инициализация блока брендов
+    this.panel = Panel(panel_class,switch_panel_class, false); // инициализация блока
 
-    this.panel_button = ServicesArrowButton(
+    this.panel_button = PanelButton(
       button_class,
+      switch_button_class,
       this.panel,
       true,
       false
     ); // инициализация кнопки
 
     this.wswiper; // экземпляр WorkSwiper
-
-    this.panel_button.el.addEventListener("click", () => {
-      this.panel_button.click_handler();
-    });
   }
   /* -------- METHODS --------- */
   setWorkSwiper = (wswiper)=>{
+    // устанавливает свой экземпляр swiper
     this.wswiper = wswiper;
   }
 
   sizeReaction = (is_mobile) => {
+    // переключение мобильный/полный в зависимости от размеров экрана
     if (is_mobile !== this.is_mobile_state) {
       this.wswiper.toggleSwiperClass(is_mobile); // переключение стилей
       this.panel_button.show_or_hide(is_mobile);// скрыть/показать кнопку
@@ -41,6 +42,4 @@ class PanelModule {
       }
     }
   };
-}
-
-export default PanelModule;
+};

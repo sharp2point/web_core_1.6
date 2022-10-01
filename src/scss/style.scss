@@ -1,9 +1,23 @@
-@import "vars";
-@import "mixins";
-@import "init";
-@import "buttons";
-@import "up_menu";
-@import "content_block";
-@import "services";
+// ---- INIT VARS MIXIN --- //
+@import "./init/vars";
+@import "./init/mixins";
+@import "./init/init";
 
+// ---- ELEMRENTS ---- //
+@import "./elements/buttons";
+
+// ---- UP MENU ---- //
+@import "./up_menu/up_menu";
+
+// ---- MAIN BLOCK ----//
+@import "./main_block/main_block";
+
+// ---- PANELS ------- //
+@import "./panels/parts/swiper_stylize";
+@import "./panels/parts/panel_element";
+@import "./panels/parts/panel";
+@import "./panels/services";
+@import "./panels/techique";
+
+// ---- MEDIA QUERY ----//
 @import "media_query";

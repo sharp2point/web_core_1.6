@@ -6,7 +6,7 @@
   letter-spacing: -0.2px;
   background-position: center;
   background-repeat: no-repeat;
-  background: $white-color;
+  background: transparent;
   border: none;  
   cursor: pointer;
 }
@@ -43,11 +43,21 @@
 }
 .button-arrow::before{
   @include arrow;
-  transform: translate(-16px, 4px) rotate(45deg);
+  margin-top: 3px;
+  margin-right: -16px;
 }
 .button-arrow::after{
   @include arrow;
-  transform: translate(-116px, 12px) rotate(45deg);
+  margin-top: 10px;
+  margin-right: 16px;
+}
+.button-arrow--open::before{
+  transition: 1s;
+  transform: rotate(45deg) translate(0px,0px);
+}
+.button-arrow--open::after{
+  transition: 1s;
+  transform: rotate(45deg) translate(0px,0px);
 }
 /* ------------- SET ICON ---------------------- */
 .up-menu__button-burger {

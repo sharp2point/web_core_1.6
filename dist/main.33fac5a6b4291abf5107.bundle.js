@@ -26,6 +26,63 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./js/panel_module/panel.js":
+/*!**********************************!*\
+  !*** ./js/panel_module/panel.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _parts_swiper_init_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parts/swiper_init.js */ "./js/panel_module/parts/swiper_init.js");
+/* harmony import */ var _panel_module_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./panel_module.js */ "./js/panel_module/panel_module.js");
+
+
+
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(config) {
+  /* ---------------- НАСТРОЙКА ПАНЕЛИ ------------- */
+
+  let panel = new _panel_module_js__WEBPACK_IMPORTED_MODULE_1__["default"](
+    config.panel.host,
+    config.panel.panel_switch,
+    config.panel.button,
+    config.panel.button_switch
+  );
+
+  /* --- НАСТРОЙКА ОБЁРТКИ Swiper --- */
+  let swiper = new _parts_swiper_init_js__WEBPACK_IMPORTED_MODULE_0__.WorkerSwiper(config.swiper);
+
+  swiper.setHost(
+    config.place.host,
+    config.place.large,
+    config.place.mobile
+  );
+  swiper.setWrapper(
+    config.wrapper.host,
+    config.wrapper.large,
+    config.wrapper.mobile
+  );
+  swiper.setPaginator(
+    config.paginate.host,
+    config.paginate.large,
+    config.paginate.mobile
+  );
+  swiper.setSliderList(
+    config.slide.host,
+    config.slide.large,
+    config.slide.mobile
+  );
+
+  panel.setWorkSwiper(swiper);
+
+  return panel;
+}
+
+
+/***/ }),
+
 /***/ "./js/panel_module/panel_module.js":
 /*!*****************************************!*\
   !*** ./js/panel_module/panel_module.js ***!
@@ -34,41 +91,42 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* binding */ PanelModule)
 /* harmony export */ });
-/* harmony import */ var _panel_module_parts_services_arrow_button_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../panel_module/parts/services_arrow_button.js */ "./js/panel_module/parts/services_arrow_button.js");
-/* harmony import */ var _panel_module_parts_services_brand_panel_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../panel_module/parts/services_brand_panel.js */ "./js/panel_module/parts/services_brand_panel.js");
+/* harmony import */ var _parts_panel_button_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parts/panel_button.js */ "./js/panel_module/parts/panel_button.js");
+/* harmony import */ var _parts_panel_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts/panel.js */ "./js/panel_module/parts/panel.js");
 
 
 
 class PanelModule {
   constructor(
     panel_class, // класс элемента панели
+    switch_panel_class,
     button_class, // класс кнопки управления
+    switch_button_class
   ) {
     this.is_mobile_state;
 
-    this.panel = (0,_panel_module_parts_services_brand_panel_js__WEBPACK_IMPORTED_MODULE_1__["default"])(panel_class, false); // инициализация блока брендов
+    this.panel = (0,_parts_panel_js__WEBPACK_IMPORTED_MODULE_1__["default"])(panel_class,switch_panel_class, false); // инициализация блока
 
-    this.panel_button = (0,_panel_module_parts_services_arrow_button_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
+    this.panel_button = (0,_parts_panel_button_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
       button_class,
+      switch_button_class,
       this.panel,
       true,
       false
     ); // инициализация кнопки
 
     this.wswiper; // экземпляр WorkSwiper
-
-    this.panel_button.el.addEventListener("click", () => {
-      this.panel_button.click_handler();
-    });
   }
   /* -------- METHODS --------- */
   setWorkSwiper = (wswiper)=>{
+    // устанавливает свой экземпляр swiper
     this.wswiper = wswiper;
   }
 
   sizeReaction = (is_mobile) => {
+    // переключение мобильный/полный в зависимости от размеров экрана
     if (is_mobile !== this.is_mobile_state) {
       this.wswiper.toggleSwiperClass(is_mobile); // переключение стилей
       this.panel_button.show_or_hide(is_mobile);// скрыть/показать кнопку
@@ -81,28 +139,62 @@ class PanelModule {
       }
     }
   };
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PanelModule);
+};
 
 
 /***/ }),
 
-/***/ "./js/panel_module/parts/services_arrow_button.js":
-/*!********************************************************!*\
-  !*** ./js/panel_module/parts/services_arrow_button.js ***!
-  \********************************************************/
+/***/ "./js/panel_module/parts/panel.js":
+/*!****************************************!*\
+  !*** ./js/panel_module/parts/panel.js ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(class_element, panel, is_hide, is_open) {
-  let is_open_bt = is_open;
-  let is_hide_bt = is_hide;
-  let panel_control = panel;
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(class_element,panel_switch_class, is_open) {
+  let is_open_pnl = is_open;
+  let switch_class = panel_switch_class;
   let dom_el = document.querySelector(class_element);
+
+  function open_or_close(is_open) {
+    is_open_pnl = is_open
+    if (is_open) {
+      dom_el.classList.remove(switch_class);
+    } else {
+      dom_el.classList.add(switch_class);
+    }
+    return is_open_pnl;
+  }
+
+  return {
+    is_open_pnl: is_open_pnl,
+    el: dom_el,
+    open_or_close: open_or_close,
+  };
+}
+
+
+/***/ }),
+
+/***/ "./js/panel_module/parts/panel_button.js":
+/*!***********************************************!*\
+  !*** ./js/panel_module/parts/panel_button.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(class_element,switch_button_class, panel, is_hide, is_open) {
+  let is_open_bt = is_open; // открытое/закрытое состояние
+  let is_hide_bt = is_hide; // показать/скрыть
+  let panel_control = panel; // панель привязанная к кнопке
+  let switch_button = switch_button_class; // стиль переключатель открытое/закрытое состояние
+  let dom_el = document.querySelector(class_element); // DOM элемент кнопки
 
   (function init(){
     open_or_close(is_open_bt);
@@ -123,10 +215,10 @@ __webpack_require__.r(__webpack_exports__);
     // направлениек стрелок
     is_open_bt = is_open;
     if (is_open) {      
-      dom_el.classList.add("button__arrow_open");
+      dom_el.classList.add(switch_button);
       dom_el.textContent = "Скрыть";
     } else {
-      dom_el.classList.remove("button__arrow_open");
+      dom_el.classList.remove(switch_button);
       dom_el.textContent = "Показать всё";
     }
     panel_control.open_or_close(is_open);
@@ -137,47 +229,14 @@ __webpack_require__.r(__webpack_exports__);
     is_open_bt = is_open_bt ? false : true;
     open_or_close(is_open_bt);
   }
-
+  dom_el.addEventListener("click",click_handler);
+  
   return {
     is_open: is_open_bt,
     is_hide: is_hide_bt,
     el: dom_el,
     click_handler: click_handler,
     show_or_hide: show_or_hide,
-    open_or_close: open_or_close,
-  };
-}
-
-
-/***/ }),
-
-/***/ "./js/panel_module/parts/services_brand_panel.js":
-/*!*******************************************************!*\
-  !*** ./js/panel_module/parts/services_brand_panel.js ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(class_element, is_open) {
-  let is_open_pnl = is_open;
-  let dom_el = document.querySelector(class_element);
-
-  function open_or_close(is_open) {
-    is_open_pnl = is_open
-    if (is_open) {
-      dom_el.classList.remove("services__brands-large_close");
-    } else {
-      dom_el.classList.add("services__brands-large_close");
-    }
-    return is_open_pnl;
-  }
-
-  return {
-    is_open_pnl: is_open_pnl,
-    el: dom_el,
     open_or_close: open_or_close,
   };
 }
@@ -306,95 +365,6 @@ class WorkerSwiper {
   };
 }
 
-
-
-/***/ }),
-
-/***/ "./js/services/services.js":
-/*!*********************************!*\
-  !*** ./js/services/services.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _panel_module_parts_swiper_init_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../panel_module/parts/swiper_init.js */ "./js/panel_module/parts/swiper_init.js");
-/* harmony import */ var _panel_module_panel_module_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../panel_module/panel_module.js */ "./js/panel_module/panel_module.js");
-
-
-
-let MOBILE_WIDTH = 767;
-const config_panel = {
-  swiper: ".swiper",
-  panel: {
-    host: ".services__brands",
-    button: ".button__arrow",
-  },
-  place: {
-    host: ".services__brands",
-    large: ["services__brands-large"],
-    mobile: ["services__brands", "swiper"],
-  },
-  wrapper: {
-    host: ".wrapper",
-    large: ["brands__wrapper-large"],
-    mobile: ["swiper-wrapper"],
-  },
-  paginate: {
-    host: ".swiper-pagination",
-    large: ["brands__paginator"],
-    mobile: ["swiper-pagination"],
-  },
-  slide: {
-    host: ".brands__item",
-    large: [],
-    mobile: ["swiper-slide"],
-  },
-};
-/* ---------------- НАСТРОЙКА ПАНЕЛИ ------------- */
-
-let host_brand_panel = new _panel_module_panel_module_js__WEBPACK_IMPORTED_MODULE_1__["default"](
-  config_panel.panel.host,
-  config_panel.panel.button
-);
-
-/* --- НАСТРОЙКА ОБЁРТКИ Swiper --- */
-let swiper = new _panel_module_parts_swiper_init_js__WEBPACK_IMPORTED_MODULE_0__.WorkerSwiper(config_panel.swiper);
-
-swiper.setHost(
-  config_panel.place.host,
-  config_panel.place.large,
-  config_panel.place.mobile
-);
-swiper.setWrapper(
-  config_panel.wrapper.host,
-  config_panel.wrapper.large,
-  config_panel.wrapper.mobile
-);
-swiper.setPaginator(
-  config_panel.paginate.host,
-  config_panel.paginate.large,
-  config_panel.paginate.mobile
-);
-swiper.setSliderList(
-  config_panel.slide.host,
-  config_panel.slide.large,
-  config_panel.slide.mobile
-);
-
-host_brand_panel.setWorkSwiper(swiper);
-
-/* --------------------- EVENTS ---------------- */
-
-function mobileScreen() {
-  return screen.width <= MOBILE_WIDTH ? true : false;
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  host_brand_panel.sizeReaction(mobileScreen());
-});
-window.addEventListener("resize", () => {
-  host_brand_panel.sizeReaction(mobileScreen());
-});
 
 
 /***/ }),
@@ -13291,13 +13261,59 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_css_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/css/bundle */ "../node_modules/swiper/swiper-bundle.min.css");
 /* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
-/* harmony import */ var _js_services_services_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../js/services/services.js */ "./js/services/services.js");
+/* harmony import */ var _panel_module_panel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./panel_module/panel */ "./js/panel_module/panel.js");
 
 
 
+
+let MOBILE_WIDTH = 767;
+
+const config_panel_service = {
+  swiper: ".swiper",
+  panel: {
+    host: ".panel__elements",
+    panel_switch: "panel__elements-large--close",
+    button: ".panel__button-arrow",
+    button_switch: "button-arrow--open"
+  },
+  place: {
+    host: ".panel__elements",
+    large: ["panel__elements--large"],
+    mobile: ["panel__elements", "swiper"],
+  },
+  wrapper: {
+    host: ".wrapper",
+    large: ["wrapper-large"],
+    mobile: ["swiper-wrapper"],
+  },
+  paginate: {
+    host: ".swiper-pagination",
+    large: ["panel__paginator--hide"],
+    mobile: ["swiper-pagination"],
+  },
+  slide: {
+    host: ".elements__item",
+    large: [],
+    mobile: ["swiper-slide"],
+  },
+};
+
+
+let service_panel = (0,_panel_module_panel__WEBPACK_IMPORTED_MODULE_2__["default"])(config_panel_service);
+//let technique_panel = Panel(config_panel_tehnique);
+
+function sizeReaction() {
+  let is_mobile = screen.width <= MOBILE_WIDTH ? true : false;
+  console.log(is_mobile);
+  service_panel.sizeReaction(is_mobile);
+  //technique_panel.sizeReaction(is_mobile);
+}
+
+document.addEventListener("DOMContentLoaded", sizeReaction);
+window.addEventListener("resize", sizeReaction);
 
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=main.6b66ea37135a0ddbe231.bundle.js.map
+//# sourceMappingURL=main.33fac5a6b4291abf5107.bundle.js.map
