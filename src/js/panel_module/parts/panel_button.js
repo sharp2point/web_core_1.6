@@ -3,7 +3,7 @@ export default function (class_element,switch_button_class, panel, is_hide, is_o
   let is_hide_bt = is_hide; // показать/скрыть
   let panel_control = panel; // панель привязанная к кнопке
   let switch_button = switch_button_class; // стиль переключатель открытое/закрытое состояние
-  let dom_el = document.querySelector(class_element); // DOM элемент кнопки
+  let dom_el = document.querySelectorAll(class_element)[0]; // DOM элемент кнопки
 
   (function init(){
     open_or_close(is_open_bt);

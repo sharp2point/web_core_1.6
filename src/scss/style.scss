@@ -1,10 +1,10 @@
 // ---- INIT VARS MIXIN --- //
-@import "./init/vars";
-@import "./init/mixins";
-@import "./init/init";
+@import "./init_vars_mixins/vars";
+@import "./init_vars_mixins/mixins";
+@import "./init_vars_mixins/init";
 
 // ---- ELEMRENTS ---- //
-@import "./elements/buttons";
+@import "./buttons/buttons";
 
 // ---- UP MENU ---- //
 @import "./up_menu/up_menu";

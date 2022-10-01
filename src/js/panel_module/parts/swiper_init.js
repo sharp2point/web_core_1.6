@@ -32,7 +32,6 @@ class WorkerSwiper {
       slideToClickedSlide: true,
       slidesPerView: 1,
       spaceBetween: 16,
-      width: 265,
       pagination: {
         el: this.paginator.el_class,
         clickable: true,
@@ -43,7 +42,7 @@ class WorkerSwiper {
 
   setHost = (el_class, mobile_class_list, large_class_list) => {
     this.host = new ElementWorkSwiper(
-      document.querySelector(el_class),
+      document.querySelectorAll(el_class)[0],
       el_class,
       mobile_class_list,
       large_class_list
@@ -52,7 +51,7 @@ class WorkerSwiper {
 
   setWrapper = (el_class, mobile_class_list, large_class_list) => {
     this.wrapper = new ElementWorkSwiper(
-      document.querySelector(el_class),
+      document.querySelectorAll(el_class)[0],
       el_class,
       mobile_class_list,
       large_class_list
@@ -61,7 +60,7 @@ class WorkerSwiper {
 
   setPaginator = (el_class, mobile_class_list, large_class_list) => {
     this.paginator = new ElementWorkSwiper(
-      document.querySelector(el_class),
+      document.querySelectorAll(el_class)[0],
       el_class,
       mobile_class_list,
       large_class_list

@@ -15,34 +15,10 @@
 }
 .wrapper-large {
   @include display-flex(row);
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   width: 100%;
-  height: 100%;   
+  height: 100%;
   gap: 1rem 2em;
   overflow: hidden;
   padding-inline: var(--pad-left);
-}
-
-/*---------- MEDIA QUERY -----------------*/
-@media screen and (max-width: 766px){
-  .panel{
-    height: 230px;
-  }
-  .panel__elements {
-    @include display-flex(column);
-    width: 100%;
-    height: 116px;
-    gap: 1rem;
-  }
-  .elements__item {
-    flex: 0 0 240px;
-  }
-}
-@media screen and (min-width: 900px){
-  .panel {
-    --pad-left: 2rem;
-  }
-  .elements__item {
-    flex: 0 0 22%;    
-  }
 }

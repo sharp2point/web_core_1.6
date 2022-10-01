@@ -1,0 +1,24 @@
+.technique-panel {
+  .element {
+    height: 160px;
+    min-width: 224px;
+    max-width: 240px;
+    border-radius: 5px;
+    gap: 1rem;
+    padding: 1rem;
+    .element__header {
+      align-self: flex-start;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      color: $content-text-color;
+    }
+    .element__button {
+      align-self: flex-end;
+    }
+  }
+  .elements__item {
+    @include display-flex(column);
+    flex: 0 0 20%;
+  }
+}

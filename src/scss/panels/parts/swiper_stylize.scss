@@ -1,3 +1,7 @@
+ 
+.service-swiper, .technique-swiper{
+  @include this_swiper
+}
 .swiper-wrapper {
   margin-left: var(--pad-left);
 }

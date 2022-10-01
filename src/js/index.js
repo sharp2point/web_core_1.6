@@ -5,44 +5,71 @@ import Panel from "./panel_module/panel";
 let MOBILE_WIDTH = 767;
 
 const config_panel_service = {
-  swiper: ".swiper",
+  swiper: ".service-swiper",
   panel: {
-    host: ".panel__elements",
+    host: ".services-panel .panel__elements",
     panel_switch: "panel__elements-large--close",
-    button: ".panel__button-arrow",
+    button: ".services-panel>.panel__button-arrow",
     button_switch: "button-arrow--open"
   },
   place: {
-    host: ".panel__elements",
+    host: ".services-panel .panel__elements",
     large: ["panel__elements--large"],
-    mobile: ["panel__elements", "swiper"],
+    mobile: ["panel__elements", "service-swiper"],
   },
   wrapper: {
-    host: ".wrapper",
+    host: ".services-panel .wrapper",
     large: ["wrapper-large"],
     mobile: ["swiper-wrapper"],
   },
   paginate: {
-    host: ".swiper-pagination",
+    host: ".services-panel .swiper-pagination",
     large: ["panel__paginator--hide"],
     mobile: ["swiper-pagination"],
   },
   slide: {
-    host: ".elements__item",
+    host: ".services-panel .elements__item",
+    large: [],
+    mobile: ["swiper-slide"],
+  },
+};
+const config_panel_technique = {
+  swiper: ".technique-swiper",
+  panel: {
+    host: ".technique-panel .panel__elements",
+    panel_switch: "panel__elements-large--close",
+    button: ".technique-panel .panel__button-arrow",
+    button_switch: "button-arrow--open"
+  },
+  place: {
+    host: ".technique-panel .panel__elements",
+    large: ["panel__elements--large"],
+    mobile: ["panel__elements", "technique-swiper"],
+  },
+  wrapper: {
+    host: ".technique-panel .wrapper",
+    large: ["wrapper-large"],
+    mobile: ["swiper-wrapper"],
+  },
+  paginate: {
+    host: ".technique-panel .swiper-pagination",
+    large: ["panel__paginator--hide"],
+    mobile: ["swiper-pagination"],
+  },
+  slide: {
+    host: ".technique-panel .elements__item",
     large: [],
     mobile: ["swiper-slide"],
   },
 };
 
-
 let service_panel = Panel(config_panel_service);
-//let technique_panel = Panel(config_panel_tehnique);
+let technique_panel = Panel(config_panel_technique);
 
 function sizeReaction() {
   let is_mobile = screen.width <= MOBILE_WIDTH ? true : false;
-  console.log(is_mobile);
   service_panel.sizeReaction(is_mobile);
-  //technique_panel.sizeReaction(is_mobile);
+  technique_panel.sizeReaction(is_mobile);
 }
 
 document.addEventListener("DOMContentLoaded", sizeReaction);

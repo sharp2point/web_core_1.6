@@ -1,7 +1,7 @@
 export default function (class_element,panel_switch_class, is_open) {
   let is_open_pnl = is_open;
   let switch_class = panel_switch_class;
-  let dom_el = document.querySelector(class_element);
+  let dom_el = document.querySelectorAll(class_element)[0];
 
   function open_or_close(is_open) {
     is_open_pnl = is_open

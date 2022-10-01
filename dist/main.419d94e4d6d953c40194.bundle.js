@@ -157,7 +157,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(class_element,panel_switch_class, is_open) {
   let is_open_pnl = is_open;
   let switch_class = panel_switch_class;
-  let dom_el = document.querySelector(class_element);
+  let dom_el = document.querySelectorAll(class_element)[0];
 
   function open_or_close(is_open) {
     is_open_pnl = is_open
@@ -194,7 +194,7 @@ __webpack_require__.r(__webpack_exports__);
   let is_hide_bt = is_hide; // показать/скрыть
   let panel_control = panel; // панель привязанная к кнопке
   let switch_button = switch_button_class; // стиль переключатель открытое/закрытое состояние
-  let dom_el = document.querySelector(class_element); // DOM элемент кнопки
+  let dom_el = document.querySelectorAll(class_element)[0]; // DOM элемент кнопки
 
   (function init(){
     open_or_close(is_open_bt);
@@ -290,7 +290,6 @@ class WorkerSwiper {
       slideToClickedSlide: true,
       slidesPerView: 1,
       spaceBetween: 16,
-      width: 265,
       pagination: {
         el: this.paginator.el_class,
         clickable: true,
@@ -301,7 +300,7 @@ class WorkerSwiper {
 
   setHost = (el_class, mobile_class_list, large_class_list) => {
     this.host = new ElementWorkSwiper(
-      document.querySelector(el_class),
+      document.querySelectorAll(el_class)[0],
       el_class,
       mobile_class_list,
       large_class_list
@@ -310,7 +309,7 @@ class WorkerSwiper {
 
   setWrapper = (el_class, mobile_class_list, large_class_list) => {
     this.wrapper = new ElementWorkSwiper(
-      document.querySelector(el_class),
+      document.querySelectorAll(el_class)[0],
       el_class,
       mobile_class_list,
       large_class_list
@@ -319,7 +318,7 @@ class WorkerSwiper {
 
   setPaginator = (el_class, mobile_class_list, large_class_list) => {
     this.paginator = new ElementWorkSwiper(
-      document.querySelector(el_class),
+      document.querySelectorAll(el_class)[0],
       el_class,
       mobile_class_list,
       large_class_list
@@ -13269,44 +13268,71 @@ __webpack_require__.r(__webpack_exports__);
 let MOBILE_WIDTH = 767;
 
 const config_panel_service = {
-  swiper: ".swiper",
+  swiper: ".service-swiper",
   panel: {
-    host: ".panel__elements",
+    host: ".services-panel .panel__elements",
     panel_switch: "panel__elements-large--close",
-    button: ".panel__button-arrow",
+    button: ".services-panel>.panel__button-arrow",
     button_switch: "button-arrow--open"
   },
   place: {
-    host: ".panel__elements",
+    host: ".services-panel .panel__elements",
     large: ["panel__elements--large"],
-    mobile: ["panel__elements", "swiper"],
+    mobile: ["panel__elements", "service-swiper"],
   },
   wrapper: {
-    host: ".wrapper",
+    host: ".services-panel .wrapper",
     large: ["wrapper-large"],
     mobile: ["swiper-wrapper"],
   },
   paginate: {
-    host: ".swiper-pagination",
+    host: ".services-panel .swiper-pagination",
     large: ["panel__paginator--hide"],
     mobile: ["swiper-pagination"],
   },
   slide: {
-    host: ".elements__item",
+    host: ".services-panel .elements__item",
+    large: [],
+    mobile: ["swiper-slide"],
+  },
+};
+const config_panel_technique = {
+  swiper: ".technique-swiper",
+  panel: {
+    host: ".technique-panel .panel__elements",
+    panel_switch: "panel__elements-large--close",
+    button: ".technique-panel .panel__button-arrow",
+    button_switch: "button-arrow--open"
+  },
+  place: {
+    host: ".technique-panel .panel__elements",
+    large: ["panel__elements--large"],
+    mobile: ["panel__elements", "technique-swiper"],
+  },
+  wrapper: {
+    host: ".technique-panel .wrapper",
+    large: ["wrapper-large"],
+    mobile: ["swiper-wrapper"],
+  },
+  paginate: {
+    host: ".technique-panel .swiper-pagination",
+    large: ["panel__paginator--hide"],
+    mobile: ["swiper-pagination"],
+  },
+  slide: {
+    host: ".technique-panel .elements__item",
     large: [],
     mobile: ["swiper-slide"],
   },
 };
 
-
 let service_panel = (0,_panel_module_panel__WEBPACK_IMPORTED_MODULE_2__["default"])(config_panel_service);
-//let technique_panel = Panel(config_panel_tehnique);
+let technique_panel = (0,_panel_module_panel__WEBPACK_IMPORTED_MODULE_2__["default"])(config_panel_technique);
 
 function sizeReaction() {
   let is_mobile = screen.width <= MOBILE_WIDTH ? true : false;
-  console.log(is_mobile);
   service_panel.sizeReaction(is_mobile);
-  //technique_panel.sizeReaction(is_mobile);
+  technique_panel.sizeReaction(is_mobile);
 }
 
 document.addEventListener("DOMContentLoaded", sizeReaction);
@@ -13316,4 +13342,4 @@ window.addEventListener("resize", sizeReaction);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.33fac5a6b4291abf5107.bundle.js.map
+//# sourceMappingURL=main.419d94e4d6d953c40194.bundle.js.map
