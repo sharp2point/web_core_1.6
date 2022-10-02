@@ -1302,6 +1302,38 @@ html {
   height: 7px;
   transform: translate(80px, -16px) rotate(135deg);
 }
+.price-panel .panel__offer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 1rem;
+}
+.price-panel .panel__offer .panel__offer-text {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  font-weight: 200;
+  color: #1B1C21;
+}
+.price-panel .panel__offer .panel__offert-button {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.2px;
+  font-weight: 600;
+  color: #1B1C21;
+  text-align: start;
+}
+.price-panel .panel__offer .panel__offert-button::after {
+  position: absolute;
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid #FF3E79;
+  border-left: 2px solid #FF3E79;
+  transform: translate(0.5rem, 0.5rem) rotate(135deg);
+}
 
 .element-header .element {
   height: 40px !important;

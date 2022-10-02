@@ -92,6 +92,37 @@
       }
     }
   }
+  .panel__offer{
+    @include display-flex(column);
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 1rem;
+    .panel__offer-text{
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      font-weight: 200;
+      color:$content-text-color;
+    }
+    .panel__offert-button{
+      font-size: 1rem;
+      line-height: 1.5rem;
+      letter-spacing: -0.2px;
+      font-weight: 600;
+      color:$content-text-color;
+      text-align: start;
+    }
+    .panel__offert-button::after{
+      position: absolute;
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-top: 2px solid $button-circle-background;
+      border-left: 2px solid $button-circle-background;
+      transform: translate(0.5rem, 0.5rem) rotate(135deg);
+    }
+  }
 }
 .element-header {
   .element {
