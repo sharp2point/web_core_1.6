@@ -10,7 +10,7 @@ const config_panel_service = {
     host: ".services-panel .panel__elements",
     panel_switch: "panel__elements-large--close",
     button: ".services-panel>.panel__button-arrow",
-    button_switch: "button-arrow--open"
+    button_switch: "button-arrow--open",
   },
   place: {
     host: ".services-panel .panel__elements",
@@ -39,7 +39,7 @@ const config_panel_technique = {
     host: ".technique-panel .panel__elements",
     panel_switch: "panel__elements-large--close",
     button: ".technique-panel .panel__button-arrow",
-    button_switch: "button-arrow--open"
+    button_switch: "button-arrow--open",
   },
   place: {
     host: ".technique-panel .panel__elements",
@@ -62,14 +62,45 @@ const config_panel_technique = {
     mobile: ["swiper-slide"],
   },
 };
+const config_panel_price = {
+  swiper: ".price-swiper",
+  panel: {
+    host: ".price-panel .panel__elements",
+    panel_switch: "panel__elements-large--close",
+    button: null,
+    button_switch: null,
+  },
+  place: {
+    host: ".price-panel .panel__elements",
+    large: ["panel__elements--large"],
+    mobile: ["panel__elements", "price-swiper"],
+  },
+  wrapper: {
+    host: ".price-panel .wrapper",
+    large: ["wrapper-large__price"],
+    mobile: ["swiper-wrapper"],
+  },
+  paginate: {
+    host: ".price-panel .swiper-pagination",
+    large: ["panel__paginator--hide"],
+    mobile: ["swiper-pagination"],
+  },
+  slide: {
+    host: ".price-panel .elements__item",
+    large: [],
+    mobile: ["swiper-slide"],
+  },
+};
 
-let service_panel = Panel(config_panel_service);
-let technique_panel = Panel(config_panel_technique);
+let service_panel = Panel(config_panel_service); // блок -> ремонт техники различных брендов
+let technique_panel = Panel(config_panel_technique); // блок -> ремонт различных брендов техники
+let price_panel = Panel(config_panel_price); // блок -> цены на услуги
 
 function sizeReaction() {
   let is_mobile = screen.width <= MOBILE_WIDTH ? true : false;
   service_panel.sizeReaction(is_mobile);
   technique_panel.sizeReaction(is_mobile);
+  price_panel.sizeReaction(is_mobile);
 }
 
 document.addEventListener("DOMContentLoaded", sizeReaction);

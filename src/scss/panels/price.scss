@@ -92,6 +92,7 @@
       }
     }
   }
+  
   .panel__offer{
     @include display-flex(column);
     justify-content: space-between;
@@ -138,7 +139,19 @@
     visibility: hidden;
   }
 }
+.wrapper-large__price {
+  @include display-flex(row);
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  gap: 0;
+  overflow: hidden;
+  padding-inline: var(--pad-left);
+}
 @media screen and (max-width: $mobile-size) {
+  .price-swiper{
+    min-height: 225px;
+  }
   .price-panel {
     .wrapper {
       @include display-flex(row);
