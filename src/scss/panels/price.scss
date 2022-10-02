@@ -5,15 +5,15 @@
     align-items: center;
     padding-inline: 1.5rem;
     margin-inline: 2rem;
-    .back{
-        position: absolute;
-        transform: translateY(40px);
-        width: 92%;
-        max-width: 1050px;
-        height: 310px;
-        background-color: white;
-        border-radius: 0.5rem;
-        z-index: 1;
+    .back {
+      position: absolute;
+      transform: translateY(40px);
+      width: 92%;
+      max-width: 1050px;
+      height: 310px;
+      background-color: white;
+      border-radius: 0.5rem;
+      z-index: 1;
     }
     .elements__item {
       width: 100%;
@@ -37,7 +37,8 @@
             font-size: 14px;
             line-height: 18px;
             letter-spacing: 0.2px;
-            color: $content-text-color;
+            font-weight: 200;
+            color: $button-border-color;
           }
           .element__description {
             display: flex;
@@ -89,20 +90,77 @@
           transform: translate(80px, -16px) rotate(135deg);
         }
       }
-    }    
+    }
   }
 }
 .element-header {
-    .element{
-        height: 40px !important;
-        border: none !important;
-        background-color: $background-color ;
-    }
-    
-    .element__description {
-      color: $button-border-color !important;
-    }
-    .element__button {
-      visibility: hidden;
+  .element {
+    height: 40px !important;
+    border: none !important;
+    background-color: $background-color;
+  }
+
+  .element__description {
+    color: $button-border-color !important;
+  }
+  .element__button {
+    visibility: hidden;
+  }
+}
+@media screen and (max-width: $mobile-size) {
+  .price-panel {
+    .wrapper {
+      @include display-flex(row);
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 1rem;
+      margin-inline: 1rem;
+      gap: 1rem;
+      .back {
+        display: none;
+      }
+      .elements__item {
+        .element {
+          @include display-flex(row);
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          width: 260px;
+          min-height: 180px;
+          padding-inline: 1rem;
+          border-radius: 0.5rem;
+          border: none;
+          .element__content {
+            @include display-flex(column);
+            justify-content: space-between;
+            
+            width: 100%;
+            
+            padding-bottom: 1rem;
+            .element__header {
+              display: block;
+              margin-top: 1rem;
+            }
+            .description-text {
+              flex: 0 0 100%;
+            }
+            .description-price {
+              flex: 0 0 100%;
+            }
+            .description-time {
+              flex: 0 0 100%;
+            }
+          }
+
+          .element__button {
+            position: absolute;
+            transform: translate(50px, 50px);
+          }
+        }
+      }
     }
   }
+  .element-header {
+    display: none;
+  }
+}

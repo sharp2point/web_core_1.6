@@ -1252,7 +1252,8 @@ html {
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.2px;
-  color: #1B1C21;
+  font-weight: 200;
+  color: #7E7E82;
 }
 .price-panel .wrapper .elements__item .element .element__content .element__description {
   display: flex;
@@ -1314,7 +1315,60 @@ html {
   visibility: hidden;
 }
 
-@media screen and (max-width: 766px) {
+@media screen and (max-width: 768px) {
+  .price-panel .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1rem;
+    margin-inline: 1rem;
+    gap: 1rem;
+  }
+  .price-panel .wrapper .back {
+    display: none;
+  }
+  .price-panel .wrapper .elements__item .element {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 260px;
+    min-height: 180px;
+    padding-inline: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+  }
+  .price-panel .wrapper .elements__item .element .element__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+  .price-panel .wrapper .elements__item .element .element__content .element__header {
+    display: block;
+    margin-top: 1rem;
+  }
+  .price-panel .wrapper .elements__item .element .element__content .description-text {
+    flex: 0 0 100%;
+  }
+  .price-panel .wrapper .elements__item .element .element__content .description-price {
+    flex: 0 0 100%;
+  }
+  .price-panel .wrapper .elements__item .element .element__content .description-time {
+    flex: 0 0 100%;
+  }
+  .price-panel .wrapper .elements__item .element .element__button {
+    position: absolute;
+    transform: translate(50px, 50px);
+  }
+  .element-header {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
   .services-panel {
     height: 230px;
   }
