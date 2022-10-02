@@ -1,0 +1,108 @@
+.price-panel {
+  .wrapper {
+    @include display-flex(column);
+    justify-content: stretch;
+    align-items: center;
+    padding-inline: 1.5rem;
+    margin-inline: 2rem;
+    .back{
+        position: absolute;
+        transform: translateY(40px);
+        width: 92%;
+        max-width: 1050px;
+        height: 310px;
+        background-color: white;
+        border-radius: 0.5rem;
+        z-index: 1;
+    }
+    .elements__item {
+      width: 100%;
+      .element {
+        z-index: 2;
+        width: 100%;
+        padding-inline: 0;
+        @include display-flex(row);
+        justify-content: space-between;
+        align-items: center;
+        height: 62px;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid $divider-color;
+        .element__content {
+          width: 90%;
+          @include display-flex(row);
+          justify-content: space-between;
+          .element__header {
+            display: none;
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: 0.2px;
+            color: $content-text-color;
+          }
+          .element__description {
+            display: flex;
+            font-size: 14px;
+            font-weight: 200;
+            line-height: 18px;
+            letter-spacing: 0.2px;
+            color: $content-text-color;
+          }
+          .description-text {
+            flex: 0 0 350px;
+          }
+          .description-price {
+            flex: 0 0 76px;
+          }
+          .description-time {
+            flex: 0 0 82px;
+          }
+        }
+
+        .element__button {
+          font-size: 12px;
+          font-weight: 800;
+          line-height: 1.5rem;
+          letter-spacing: -0.15px;
+          text-align: left;
+          font-variant: small-caps;
+          width: 119px;
+          height: 32px;
+          padding-left: 0.75rem;
+          padding-block: 0.25rem;
+          border-radius: 1rem;
+          border: none;
+          background-color: $button-circle-background;
+          color: $white-color;
+          cursor: pointer;
+        }
+        .element__button::before {
+          display: none;
+        }
+        .element__button::after {
+          content: "";
+          display: block;
+          border: none;
+          border-left: 2px solid white;
+          border-top: 2px solid white;
+          width: 7px;
+          height: 7px;
+          transform: translate(80px, -16px) rotate(135deg);
+        }
+      }
+    }    
+  }
+}
+.element-header {
+    .element{
+        height: 40px !important;
+        border: none !important;
+        background-color: $background-color ;
+    }
+    
+    .element__description {
+      color: $button-border-color !important;
+    }
+    .element__button {
+      visibility: hidden;
+    }
+  }
