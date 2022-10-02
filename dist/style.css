@@ -857,7 +857,7 @@ html {
   justify-content: stretch;
   min-height: 88px;
   background: #fff;
-  box-shadow: 0 3px 3px 3px #D9FFF5;
+  border-bottom: 2px solid #D9FFF5;
 }
 
 .logo {
@@ -934,7 +934,7 @@ html {
   gap: 1.5rem;
   background: #F8F8F8;
   padding-bottom: 2rem;
-  box-shadow: 0 3px 3px 3px #D9FFF5;
+  border-bottom: 2px solid #D9FFF5;
 }
 
 .main__header {
@@ -1111,7 +1111,7 @@ html {
   gap: 1rem;
   max-width: 1120px;
   padding-bottom: 1rem;
-  box-shadow: 0 3px 3px 3px #D9FFF5;
+  border-bottom: 2px solid #D9FFF5;
 }
 
 .panel__header {
@@ -1398,6 +1398,50 @@ html {
   }
   .element-header {
     display: none;
+  }
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 1rem;
+  gap: 1rem;
+}
+.footer .footer-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-basis: 0 0 30%;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1rem;
+  color: #7E7E82;
+}
+.footer .footer-content .footer__creator {
+  min-width: 218px;
+}
+.footer .footer-content .footer__politic {
+  min-width: 214px;
+}
+.footer .footer-content .footer__info {
+  max-width: 330px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .footer .footer-content {
+    justify-content: center;
+    width: 100%;
+  }
+  .footer .footer-text {
+    text-align: center;
   }
 }
 @media screen and (max-width: 768px) {

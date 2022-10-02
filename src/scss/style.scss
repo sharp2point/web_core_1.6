@@ -18,9 +18,10 @@
 @import "./panels/parts/panel";
 @import "./panels/services";
 @import "./panels/techique";
+@import "./panels/price";
 
 // ---- PRICES ---------//
-@import "./panels/price.scss";
+@import "./footer/footer";
 
 // ---- MEDIA QUERY ----//
 @import "media_query";
