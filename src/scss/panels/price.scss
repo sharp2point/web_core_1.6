@@ -65,7 +65,7 @@
           line-height: 1.5rem;
           letter-spacing: -0.15px;
           text-align: left;
-          font-variant: small-caps;
+          text-transform: uppercase;
           width: 119px;
           height: 32px;
           padding-left: 0.75rem;
@@ -83,10 +83,10 @@
           content: "";
           display: block;
           border: none;
-          border-left: 2px solid white;
-          border-top: 2px solid white;
-          width: 7px;
-          height: 7px;
+          border-left: 3px solid white;
+          border-top: 3px solid white;
+          width: 6px;
+          height: 6px;
           transform: translate(80px, -16px) rotate(135deg);
         }
       }

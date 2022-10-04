@@ -1,0 +1,113 @@
+.feedback {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  background-color: rgba($color: #ffffff, $alpha: 0.6);
+  z-index: 10;
+  .modal {
+    max-width: 440px;
+    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #ffffff;
+    padding-inline: 1rem;
+    gap: 1rem;
+    box-shadow: 1rem 0 4rem 0 rgba($color: #0E185033, $alpha: 0.2), -2px 0 4px 0 rgba($color: #454F7E, $alpha: 0.02);
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      margin-top: 1.5rem;
+      .header__text {
+        font-size: 24px;
+        line-height: 40px;
+        letter-spacing: -0.6px;
+        margin-left: 0;
+      }
+      .header__text::before {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 4px;
+        height: 40px;
+        background: $header-mark-color;
+        border-radius: 0px 4px 4px 0;
+        left: 0;
+      }
+    }
+    .feedback__form {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: stretch;
+      gap: 1rem;
+
+      .form__input {
+        height: 3rem;
+        border: 1px solid $divider-color;
+        border-radius: 0.5rem;
+        padding: 1rem;
+      }
+      .form__input::placeholder {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        letter-spacing: -0.2px;
+        color: $pagination-bullet-active-color;
+      }
+      .input-message {
+        height: 118px;
+      }
+      .form__agreement {
+        font-size: 14px;
+        line-height: 1rem;
+        color: $button-border-color;
+      }
+      .form__link {
+        text-decoration: none;
+        color: #ff3e79;
+      }
+      .form__submit {
+        align-self: flex-end;
+        font-size: 12px;
+        font-weight: 800;
+        line-height: 1.5rem;
+        letter-spacing: -0.15px;
+        text-align: left;
+        text-transform: uppercase;
+        width: 136px;
+        height: 32px;
+        padding-left: 1.25rem;
+        padding-block: 0.25rem;
+        border-radius: 1rem;
+        border: none;
+        background-color: #ff3e79;
+        color: #ffffff;
+        cursor: pointer;
+      }
+
+      .form__submit::after {
+        position: absolute;
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-top: 3px solid $white-color;
+        border-left: 3px solid $white-color;
+        transform: translate(0.5rem, 0.5rem) rotate(135deg);
+      }
+    }
+  }
+}

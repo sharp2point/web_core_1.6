@@ -97,7 +97,7 @@ let technique_panel = Panel(config_panel_technique); // блок -> ремонт
 let price_panel = Panel(config_panel_price); // блок -> цены на услуги
 
 function sizeReaction() {
-  let is_mobile = screen.width <= MOBILE_WIDTH ? true : false;
+  let is_mobile = window.innerWidth <= MOBILE_WIDTH ? true : false;
   service_panel.sizeReaction(is_mobile);
   technique_panel.sizeReaction(is_mobile);
   price_panel.sizeReaction(is_mobile);

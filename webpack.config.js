@@ -10,7 +10,7 @@ module.exports = {
   entry: "./js/index",
   output: {
     filename: "[name].[contenthash].bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    path: "E:/PROJECTS/KATAACADEMY/1. WEB CORE/wc_final_project",//path.resolve(__dirname, "dist")
   },
   devtool: "source-map",
   plugins: [
