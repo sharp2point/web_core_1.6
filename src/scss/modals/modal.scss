@@ -18,8 +18,7 @@
   box-shadow: 1rem 0 4rem 0 rgba($color: #0E185033, $alpha: 0.2), -2px 0 4px 0 rgba($color: #454F7E, $alpha: 0.02);
 
   .header {
-    display: flex;
-    flex-direction: column;
+    @include display-flex(column);
     justify-content: space-between;
     align-items: flex-start;
     gap: 40px;
@@ -122,4 +121,13 @@
 
 .call {
   @include modal;
+}
+
+@media screen and (min-width: 400px){
+  .header{
+    .mobile-menu__button-close{
+      position: absolute;
+      transform: translateX(-6rem);
+    }
+  }
 }
