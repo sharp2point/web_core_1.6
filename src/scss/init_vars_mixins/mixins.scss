@@ -1,12 +1,12 @@
-@mixin display-flex($direction){
+@mixin display-flex($direction) {
   display: flex;
   flex-direction: $direction;
 }
-@mixin block-shadow-line{
+@mixin block-shadow-line {
   //box-shadow: 0 3px 3px 3px $shadow-up-menu-color;
   border-bottom: 2px solid $shadow-up-menu-color;
 }
-@mixin divider-up-menu{
+@mixin divider-up-menu {
   position: relative;
   content: "";
   width: 0px;
@@ -15,18 +15,18 @@
   border: 1px solid $divider-color;
 }
 
-@mixin arrow{
+@mixin arrow {
   content: "";
   border-left: 2px solid $header-mark-color;
   border-top: 2px solid $header-mark-color;
   width: 5px;
   height: 5px;
   transition: rotate 1s;
-  transform: rotate(-135deg);  
-  float: left;  
+  transform: rotate(-135deg);
+  float: left;
 }
 
-@mixin this_swiper{
+@mixin this_swiper {
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -34,4 +34,19 @@
   list-style: none;
   padding: 0;
   z-index: 1;
+}
+
+@mixin modal {
+  display: none;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  background-color: rgba($color: $white-color, $alpha: 0.6);
+  z-index: 10;
 }

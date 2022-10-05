@@ -22,10 +22,10 @@
         </div>
         <div class="up-menu__social-menu">
           <button
-            class="up-menu__button-call button button_type--circle"
+            class="up-menu__button-call button button-call button_type--circle"
           ></button>
           <button
-            class="up-menu__button-chat button button_type--circle"
+            class="up-menu__button-chat button button-chat button_type--circle"
           ></button>
           <button
             class="up-menu__button-profile button button_type--circle"
@@ -389,35 +389,192 @@
       </div>
     </footer>
 
+    <!-------- MODAL MAIN ---------->
+    <div class="modal-host">
+      <div class="mobile-menu mobile-menu_close">
+        <div class="mobile-menu__header">
+          <button
+            class="mobile-menu__button-close button button_type--circle"
+          ></button>
+          <div class="mobile-menu__logo logo">
+            <img class="logo__image" src="./img/CPS_logo.svg" alt="logo CPS" />
+          </div>
+          <button
+            class="mobile-menu__button-search button button_type--circle"
+          ></button>
+        </div>
+        <div class="mobile-menu__navigation">
+          <button
+            data-name="Ремонт техники"
+            class="mobile-menu__navigation-button button button_type_text button_type_text_active"
+          >
+            Ремонт техники
+          </button>
+          <button
+            data-name="Услуги и сервисы"
+            class="mobile-menu__navigation-button button button_type_text"
+          >
+            Услуги и сервисы
+          </button>
+          <button
+            data-name="Корпоративным клиентам"
+            class="mobile-menu__navigation-button button button_type_text"
+          >
+            Корпоративным клиентам
+          </button>
+          <button
+            data-name="Продавцам техники"
+            class="mobile-menu__navigation-button button button_type_text"
+          >
+            Продавцам техники
+          </button>
+          <button
+            data-name="Партнерам"
+            class="mobile-menu__navigation-button button button_type_text"
+          >
+            Партнерам
+          </button>
+          <button
+            data-name="Производителям"
+            class="mobile-menu__navigation-button button button_type_text"
+          >
+            Производителям
+          </button>
+          <button
+            data-name="Наши сервисные центры"
+            class="mobile-menu__navigation-button button button_type_text"
+          >
+            Наши сервисные центры
+          </button>
+          <button
+            data-name="Контакты"
+            class="mobile-menu__navigation-button button button_type_text"
+          >
+            Контакты
+          </button>
+        </div>
+        <div class="mobile-menu__footer">
+          <div class="mobile-menu__footer-menu">
+            <button
+              class="mobile-menu__button-call button button-call button_type--circle"
+            ></button>
+            <button
+              class="mobile-menu__button-chat button button-chat button_type--circle"
+            ></button>
+            <button
+              class="mobile-menu__button-profile button button_type--circle"
+            ></button>
+          </div>
+          <a class="mobile-menu__mail" href="mailto:mail@cps.com"
+            >mail@cps.com</a
+          >
+          <a class="mobile-menu__tel" href="tel:8 800 890 8900"
+            >8 800 890 8900</a
+          >
+          <div class="mobile-menu__lang-switcher lang-switcher">
+            <input
+              id="sw-ru"
+              class="lang-switcher__radio"
+              type="radio"
+              name="lang-switch"
+              value="RU"
+            />
+            <label for="sw-ru" class="lang-switcher__label">RU</label>
+            <input
+              id="sw-en"
+              class="lang-switcher__radio"
+              type="radio"
+              name="lang-switch"
+              value="EN"
+            />
+            <label for="sw-en" class="lang-switcher__label">EN</label>
+
+            <input
+              id="sw-ch"
+              class="lang-switcher__radio"
+              type="radio"
+              name="lang-switch"
+              value="CH"
+            />
+            <label for="sw-ch" class="lang-switcher__label">CH</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-------- MODAL FEEDBACK ------>
-    <div class="feedback feedback--close">
+    <div class="feedback modal--close">
       <div class="feedback__modal modal">
         <header class="modal__header header">
-        <button
-          class="mobile-menu__button-close feedback-button button button_type--circle"
-        ></button>
-        <h2 class="header__text">Обратная связь</h2>
-      </header>
-      <form action="post" class="feedback__form form">
-        <input class="form__input input-name" type="text" placeholder="Имя" required autofocus/>
-        <input class="form__input input-tel" type="text" placeholder="Телефон" required />
-        <input class="form__input input-email" type="text" placeholder="Электронная почта" required />
-        <textarea
-          class="form__input input-message"
-          name="message"
-          id="message"
-          cols="30"
-          rows="10"
-          placeholder="Сообщение"
-        ></textarea>
-        <p class="form__agreement">
-          Нажимая “отправить”, вы даете согласие на <a href="#" class="form__link"> обработку персональных
-          данных</a> и соглашаетесь с нашей <a href="#" class="form__link">политикой конфиденциальности</a>
-        </p>
-        <button class="form__submit" type="submit">отправить</button>
-      </form>
+          <button
+            class="mobile-menu__button-close feedback-button button button_type--circle"
+          ></button>
+          <h2 class="header__text">Обратная связь</h2>
+        </header>
+        <form action="post" class="modal__form form">
+          <input
+            class="form__input input-name"
+            type="text"
+            placeholder="Имя"
+            required
+            autofocus
+          />
+          <input
+            class="form__input input-tel"
+            type="text"
+            placeholder="Телефон"
+            required
+          />
+          <input
+            class="form__input input-email"
+            type="text"
+            placeholder="Электронная почта"
+            required
+          />
+          <textarea
+            class="form__input input-message"
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="Сообщение"
+          ></textarea>
+          <p class="form__agreement">
+            Нажимая “отправить”, вы даете согласие на
+            <a href="#" class="form__link"> обработку персональных данных</a> и
+            соглашаетесь с нашей
+            <a href="#" class="form__link">политикой конфиденциальности</a>
+          </p>
+          <button class="form__submit" type="submit">отправить</button>
+        </form>
       </div>
-      
+    </div>
+    <!-------- MODAL FEEDBACK ------>
+    <div class="call modal--close">
+      <div class="call__modal modal">
+        <header class="modal__header header">
+          <button
+            class="mobile-menu__button-close call-button button button_type--circle"
+          ></button>
+          <h2 class="header__text">Заказать звонок</h2>
+        </header>
+        <form action="post" class="modal__form form">
+          <input
+            class="form__input input-tel"
+            type="text"
+            placeholder="Телефон"
+            required
+            autofocus
+          />
+          <p class="form__agreement">
+            Нажимая “отправить”, вы даете согласие на
+            <a href="#" class="form__link"> обработку персональных данных</a> и
+            соглашаетесь с нашей
+            <a href="#" class="form__link">политикой конфиденциальности</a>
+          </p>
+          <button class="form__submit" type="submit">отправить</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
