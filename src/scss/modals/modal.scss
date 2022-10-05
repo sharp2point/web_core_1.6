@@ -7,15 +7,16 @@
   transform: translateX(110%);
 }
 .modal {
-  @include display-flex(column);  
+  @include display-flex(column);
   justify-content: space-between;
   align-items: flex-start;
   background-color: $white-color;
   padding-inline: 1rem;
   gap: 1rem;
-  max-width: 440px;    
+  max-width: 440px;
   height: 100%;
-  box-shadow: 1rem 0 4rem 0 rgba($color: #0E185033, $alpha: 0.2), -2px 0 4px 0 rgba($color: #454F7E, $alpha: 0.02);
+  box-shadow: 1rem 0 4rem 0 rgba($color: #0e185033, $alpha: 0.2),
+    -2px 0 4px 0 rgba($color: #454f7e, $alpha: 0.02);
 
   .header {
     @include display-flex(column);
@@ -55,10 +56,10 @@
       padding: 1rem;
       cursor: pointer;
     }
-    .form__input:hover{
-      box-shadow: 0 0 2px 2px rgba($color:$header-mark-color, $alpha: 0.2) ;
+    .form__input:hover {
+      box-shadow: 0 0 2px 2px rgba($color: $header-mark-color, $alpha: 0.2);
     }
-    .form__input:focus{
+    .form__input:focus {
       border-color: $button-border-color;
     }
     .form__input::placeholder {
@@ -110,8 +111,8 @@
 .feedback {
   @include modal;
 
-  .modal {    
-    .modal__form {      
+  .modal {
+    .modal__form {
       .input-message {
         height: 118px;
       }
@@ -123,9 +124,9 @@
   @include modal;
 }
 
-@media screen and (min-width: 520px){
-  .header{
-    .mobile-menu__button-close{
+@media screen and (min-width: 520px) {
+  .header {
+    .mobile-menu__button-close {
       position: absolute;
       transform: translateX(-6rem);
     }

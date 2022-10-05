@@ -7,388 +7,6 @@
     <title>Document</title>
   </head>
   <body class="page">
-    <!------- UP MENU ------------>
-    <div class="page__up-menu up-menu">
-      <div class="up-menu__left">
-        <button
-          class="up-menu__button-burger button button_type--circle"
-        ></button>
-      </div>
-
-      <div class="up-menu__center">
-        <div class="up-menu__logo logo">
-          <img class="logo__image" src=<%=require("./img/CPS_logo.svg")%>
-          alt="logo CPS" />
-        </div>
-        <div class="up-menu__social-menu">
-          <button
-            class="up-menu__button-call button button-call button_type--circle"
-          ></button>
-          <button
-            class="up-menu__button-chat button button-chat button_type--circle"
-          ></button>
-          <button
-            class="up-menu__button-profile button button_type--circle"
-          ></button>
-        </div>
-      </div>
-
-      <div class="up-menu__right">
-        <button
-          class="up-menu__button-repair button button_type--circle"
-        ></button>
-        <button
-          class="up-menu__button-checkstatus button button_type--circle"
-        ></button>
-      </div>
-    </div>
-    <!------- MAIN BLOCK --------->
-    <main class="main">
-      <header class="main__header header">
-        <h1 class="header__text">Услуги и сервисы</h1>
-
-        <!-- Меню отображается на [width > 1100] -->
-        <div class="header__menu-small menu-small">
-          <div class="menu-small__button-define">
-            <span class="button__text">Оставить заявку</span>
-            <button
-              class="menu-small__button-repair button button_type--circle"
-            ></button>
-          </div>
-          <div class="menu-small__button-define">
-            <span class="button__text">Статус ремонта</span>
-            <button
-              class="menu-small__button-checkstatus button button_type--circle"
-            ></button>
-          </div>
-        </div>
-      </header>
-
-      <div class="main__h-scroll-menu h-scroll-menu">
-        <button
-          class="h-scroll-menu__button button button_type--border--active"
-        >
-          Ремонтируемые устройства
-        </button>
-        <button class="h-scroll-menu__button button button_type--border">
-          Дополнительные услуги
-        </button>
-        <button class="h-scroll-menu__button button button_type--border">
-          Цены на услуги
-        </button>
-        <button class="h-scroll-menu__button button button_type--border">
-          Адреса сервисных центров
-        </button>
-        <button class="h-scroll-menu__button button button_type--border">
-          Специальные цены
-        </button>
-        <button class="h-scroll-menu__button button button_type--border">
-          Отзывы
-        </button>
-      </div>
-
-      <div class="main__content content">
-        <div class="content__text-block">
-          <article class="content__article">
-            <p class="content__article-paragraph">
-              Мы являемся авторизованным сервисным центром по ремонту техники
-              Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
-              официальной гарантией производителя.
-            </p>
-            <p class="content__article-paragraph">
-              Мы успешно работаем с 1992 года и заслужили репутацию надежного
-              партнера, что подтверждает большое количество постоянных клиентов.
-              Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою
-              очередь, советуют нас родным и близким.
-            </p>
-          </article>
-
-          <button class="content__button-arrow button button-arrow">
-            Читать далее
-          </button>
-        </div>
-        <img class="main__banner" src=<%=require("./img/banner.jpg")%>
-        alt="изображение с табличкой CPS">
-      </div>
-    </main>
-
-    <!------- Ремонт техники различных брендов ------>
-    <div class="services-panel panel">
-      <header class="panel__header">
-        <h3 class="panel__header-text">ремонт техники различных брендов</h3>
-      </header>
-      <div class="panel__elements elements">
-        <div class="wrapper">
-          <div class="elements__item">
-            <div class="element">
-              <img src=<%=require("./img/brand/sony.png")%> alt="image brand"
-              class="element__image" />
-              <button class="element__button"></button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <img src=<%=require("./img/brand/aser.png")%> alt="image brand"
-              class="element__image" />
-              <button class="element__button"></button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <img src=<%=require("./img/brand/hp.png")%> alt="image brand"
-              class="element__image" />
-              <button class="element__button"></button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <img src=<%=require("./img/brand/samsung.png")%> alt="image brand"
-              class="element__image" />
-              <button class="element__button"></button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <img src=<%=require("./img/brand/bosh.png")%> alt="image brand"
-              class="element__image" />
-              <button class="element__button"></button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <img src=<%=require("./img/brand/apple.png")%> alt="image brand"
-              class="element__image" />
-              <button class="element__button"></button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <img src=<%=require("./img/brand/lenovo.png")%> alt="image brand"
-              class="element__image" />
-              <button class="element__button"></button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <img src=<%=require("./img/brand/sony.png")%> alt="image brand"
-              class="element__image" />
-              <button class="element__button"></button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <img src=<%=require("./img/brand/aser.png")%> alt="image brand"
-              class="element__image" />
-              <button class="element__button"></button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <img src=<%=require("./img/brand/sony.png")%> alt="image brand"
-              class="element__image" />
-              <button class="element__button"></button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <img src=<%=require("./img/brand/bosh.png")%> alt="image brand"
-              class="element__image" />
-              <button class="element__button"></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="panel-paginator swiper-pagination"></div>
-      </div>
-
-      <button class="panel__button-arrow button button-arrow">
-        Показать все
-      </button>
-    </div>
-
-    <!-------- Ремонт различных видов техники --->
-    <div class="technique-panel panel">
-      <header class="panel__header">
-        <h3 class="panel__header-text">ремонт различных брендов техники</h3>
-      </header>
-      <div class="panel__elements elements">
-        <div class="wrapper">
-          <div class="elements__item">
-            <div class="element">
-              <h3 class="element__header">Ремонт ноутбуков</h3>
-              <button class="element__button"></button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <h3 class="element__header">Ремонт планшетов</h3>
-              <button class="element__button"></button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <h3 class="element__header">Ремонт ПК</h3>
-              <button class="element__button"></button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <h3 class="element__header">Ремонт мониторов</h3>
-              <button class="element__button"></button>
-            </div>
-          </div>
-        </div>
-        <div class="panel-paginator swiper-pagination"></div>
-      </div>
-
-      <button class="panel__button-arrow button button-arrow">
-        Показать все
-      </button>
-    </div>
-
-    <!-------- Цены на услуги ------>
-    <div class="price-panel panel">
-      <header class="panel__header">
-        <h3 class="panel__header-text">цены на услуги</h3>
-      </header>
-      <div class="panel__elements elements">
-        <div class="wrapper">
-          <div class="elements__item element-header">
-            <div class="element">
-              <div class="element__content">
-                <p class="element__description description-text">
-                  Ремонтные услуги
-                </p>
-                <p class="element__description description-price">Цена</p>
-                <p class="element__description description-time">Срок</p>
-              </div>
-              <button class="element__button">заказать</button>
-            </div>
-          </div>
-          <div class="back"></div>
-          <div class="elements__item">
-            <div class="element">
-              <div class="element__content">
-                <h3 class="element__header">Ремонтные услуги</h3>
-                <p class="element__description description-text">Диагностика</p>
-                <h3 class="element__header">Цена</h3>
-                <p class="element__description description-price">Бесплатно</p>
-                <h3 class="element__header">Срок</h3>
-                <p class="element__description description-time">30 мин</p>
-              </div>
-              <button class="element__button">заказать</button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <div class="element__content">
-                <h3 class="element__header">Ремонтные услуги</h3>
-                <p class="element__description description-text">
-                  Замена дисплея
-                </p>
-                <h3 class="element__header">Цена</h3>
-                <p class="element__description description-price">1 000 ₽</p>
-                <h3 class="element__header">Срок</h3>
-                <p class="element__description description-time">30-120 мин</p>
-              </div>
-              <button class="element__button">заказать</button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <div class="element__content">
-                <h3 class="element__header">Ремонтные услуги</h3>
-                <p class="element__description description-text">
-                  Замена полифонического динамика
-                </p>
-                <h3 class="element__header">Цена</h3>
-                <p class="element__description description-price">1 000 ₽</p>
-                <h3 class="element__header">Срок</h3>
-                <p class="element__description description-time">30-120 мин</p>
-              </div>
-              <button class="element__button">заказать</button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <div class="element__content">
-                <h3 class="element__header">Ремонтные услуги</h3>
-                <p class="element__description description-text">
-                  Тестирование с выдачей технического заключения
-                </p>
-                <h3 class="element__header">Цена</h3>
-                <p class="element__description description-price">1 000 ₽</p>
-                <h3 class="element__header">Срок</h3>
-                <p class="element__description description-time">30-120 мин</p>
-              </div>
-              <button class="element__button">заказать</button>
-            </div>
-          </div>
-
-          <div class="elements__item">
-            <div class="element">
-              <div class="element__content">
-                <h3 class="element__header">Ремонтные услуги</h3>
-                <p class="element__description description-text">
-                  Замена программного обеспечения
-                </p>
-                <h3 class="element__header">Цена</h3>
-                <p class="element__description description-price">1 000 ₽</p>
-                <h3 class="element__header">Срок</h3>
-                <p class="element__description description-time">30-120 мин</p>
-              </div>
-              <button class="element__button">заказать</button>
-            </div>
-          </div>
-        </div>
-        <div class="panel-paginator swiper-pagination"></div>
-      </div>
-      <div class="panel__offer">
-        <p class="panel__offer-text">
-          Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную
-          услугу. Для получения коммерческого предложения на постоянное
-          обслуживание, оставьте заявку.
-        </p>
-        <button class="panel__offert-button button">
-          Получить коммерческое предложение
-        </button>
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div class="footer-content">
-        <p class="footer__creator footer-text">
-          © 2019 CPS<br />
-          Разработано командой Apesong
-        </p>
-      </div>
-      <div class="footer-content">
-        <p class="footer__politic footer-text">Политика конфиденциальности</p>
-      </div>
-      <div class="footer-content">
-        <p class="footer__info footer-text">
-          Информация, размещенная на данной странице, не является публичной
-          офертой
-        </p>
-      </div>
-    </footer>
-
     <!-------- MODAL MAIN ---------->
     <div class="modal-host">
       <div class="mobile-menu mobile-menu_close">
@@ -500,6 +118,402 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="page__content">
+      <!------- UP MENU ------------>
+      <div class="page__up-menu up-menu">
+        <div class="up-menu__left">
+          <button
+            class="up-menu__button-burger button button_type--circle"
+          ></button>
+        </div>
+
+        <div class="up-menu__center">
+          <div class="up-menu__logo logo">
+            <img class="logo__image" src=<%=require("./img/CPS_logo.svg")%>
+            alt="logo CPS" />
+          </div>
+          <div class="up-menu__social-menu">
+            <button
+              class="up-menu__button-call button button-call button_type--circle"
+            ></button>
+            <button
+              class="up-menu__button-chat button button-chat button_type--circle"
+            ></button>
+            <button
+              class="up-menu__button-profile button button_type--circle"
+            ></button>
+          </div>
+        </div>
+
+        <div class="up-menu__right">
+          <button
+            class="up-menu__button-repair button button_type--circle"
+          ></button>
+          <button
+            class="up-menu__button-checkstatus button button_type--circle"
+          ></button>
+        </div>
+      </div>
+      <!------- MAIN BLOCK --------->
+      <main class="main">
+        <header class="main__header header">
+          <h1 class="header__text">Услуги и сервисы</h1>
+
+          <!-- Меню отображается на [width > 1100] -->
+          <div class="header__menu-small menu-small">
+            <div class="menu-small__button-define">
+              <span class="button__text">Оставить заявку</span>
+              <button
+                class="menu-small__button-repair button button_type--circle"
+              ></button>
+            </div>
+            <div class="menu-small__button-define">
+              <span class="button__text">Статус ремонта</span>
+              <button
+                class="menu-small__button-checkstatus button button_type--circle"
+              ></button>
+            </div>
+          </div>
+        </header>
+
+        <div class="main__h-scroll-menu h-scroll-menu">
+          <button
+            class="h-scroll-menu__button button button_type--border--active"
+          >
+            Ремонтируемые устройства
+          </button>
+          <button class="h-scroll-menu__button button button_type--border">
+            Дополнительные услуги
+          </button>
+          <button class="h-scroll-menu__button button button_type--border">
+            Цены на услуги
+          </button>
+          <button class="h-scroll-menu__button button button_type--border">
+            Адреса сервисных центров
+          </button>
+          <button class="h-scroll-menu__button button button_type--border">
+            Специальные цены
+          </button>
+          <button class="h-scroll-menu__button button button_type--border">
+            Отзывы
+          </button>
+        </div>
+
+        <div class="main__content content">
+          <div class="content__text-block">
+            <article class="content__article">
+              <p class="content__article-paragraph">
+                Мы являемся авторизованным сервисным центром по ремонту техники
+                Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
+                официальной гарантией производителя.
+              </p>
+              <p class="content__article-paragraph">
+                Мы успешно работаем с 1992 года и заслужили репутацию надежного
+                партнера, что подтверждает большое количество постоянных
+                клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям
+                и, в свою очередь, советуют нас родным и близким.
+              </p>
+            </article>
+
+            <button class="content__button-arrow button button-arrow">
+              Читать далее
+            </button>
+          </div>
+          <img class="main__banner" src=<%=require("./img/banner.jpg")%>
+          alt="изображение с табличкой CPS">
+        </div>
+      </main>
+
+      <!------- Ремонт техники различных брендов ------>
+      <div class="services-panel panel">
+        <header class="panel__header">
+          <h3 class="panel__header-text">ремонт техники различных брендов</h3>
+        </header>
+        <div class="panel__elements elements">
+          <div class="wrapper">
+            <div class="elements__item">
+              <div class="element">
+                <img src=<%=require("./img/brand/sony.png")%> alt="image brand"
+                class="element__image" />
+                <button class="element__button"></button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <img src=<%=require("./img/brand/aser.png")%> alt="image brand"
+                class="element__image" />
+                <button class="element__button"></button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <img src=<%=require("./img/brand/hp.png")%> alt="image brand"
+                class="element__image" />
+                <button class="element__button"></button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <img src=<%=require("./img/brand/samsung.png")%> alt="image
+                brand" class="element__image" />
+                <button class="element__button"></button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <img src=<%=require("./img/brand/bosh.png")%> alt="image brand"
+                class="element__image" />
+                <button class="element__button"></button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <img src=<%=require("./img/brand/apple.png")%> alt="image brand"
+                class="element__image" />
+                <button class="element__button"></button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <img src=<%=require("./img/brand/lenovo.png")%> alt="image
+                brand" class="element__image" />
+                <button class="element__button"></button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <img src=<%=require("./img/brand/sony.png")%> alt="image brand"
+                class="element__image" />
+                <button class="element__button"></button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <img src=<%=require("./img/brand/aser.png")%> alt="image brand"
+                class="element__image" />
+                <button class="element__button"></button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <img src=<%=require("./img/brand/sony.png")%> alt="image brand"
+                class="element__image" />
+                <button class="element__button"></button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <img src=<%=require("./img/brand/bosh.png")%> alt="image brand"
+                class="element__image" />
+                <button class="element__button"></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-paginator swiper-pagination"></div>
+        </div>
+
+        <button class="panel__button-arrow button button-arrow">
+          Показать все
+        </button>
+      </div>
+
+      <!-------- Ремонт различных видов техники --->
+      <div class="technique-panel panel">
+        <header class="panel__header">
+          <h3 class="panel__header-text">ремонт различных брендов техники</h3>
+        </header>
+        <div class="panel__elements elements">
+          <div class="wrapper">
+            <div class="elements__item">
+              <div class="element">
+                <h3 class="element__header">Ремонт ноутбуков</h3>
+                <button class="element__button"></button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <h3 class="element__header">Ремонт планшетов</h3>
+                <button class="element__button"></button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <h3 class="element__header">Ремонт ПК</h3>
+                <button class="element__button"></button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <h3 class="element__header">Ремонт мониторов</h3>
+                <button class="element__button"></button>
+              </div>
+            </div>
+          </div>
+          <div class="panel-paginator swiper-pagination"></div>
+        </div>
+
+        <button class="panel__button-arrow button button-arrow">
+          Показать все
+        </button>
+      </div>
+
+      <!-------- Цены на услуги ------>
+      <div class="price-panel panel">
+        <header class="panel__header">
+          <h3 class="panel__header-text">цены на услуги</h3>
+        </header>
+        <div class="panel__elements elements">
+          <div class="wrapper">
+            <div class="elements__item element-header">
+              <div class="element">
+                <div class="element__content">
+                  <p class="element__description description-text">
+                    Ремонтные услуги
+                  </p>
+                  <p class="element__description description-price">Цена</p>
+                  <p class="element__description description-time">Срок</p>
+                </div>
+                <button class="element__button">заказать</button>
+              </div>
+            </div>
+            <div class="back"></div>
+            <div class="elements__item">
+              <div class="element">
+                <div class="element__content">
+                  <h3 class="element__header">Ремонтные услуги</h3>
+                  <p class="element__description description-text">
+                    Диагностика
+                  </p>
+                  <h3 class="element__header">Цена</h3>
+                  <p class="element__description description-price">
+                    Бесплатно
+                  </p>
+                  <h3 class="element__header">Срок</h3>
+                  <p class="element__description description-time">30 мин</p>
+                </div>
+                <button class="element__button">заказать</button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <div class="element__content">
+                  <h3 class="element__header">Ремонтные услуги</h3>
+                  <p class="element__description description-text">
+                    Замена дисплея
+                  </p>
+                  <h3 class="element__header">Цена</h3>
+                  <p class="element__description description-price">1 000 ₽</p>
+                  <h3 class="element__header">Срок</h3>
+                  <p class="element__description description-time">
+                    30-120 мин
+                  </p>
+                </div>
+                <button class="element__button">заказать</button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <div class="element__content">
+                  <h3 class="element__header">Ремонтные услуги</h3>
+                  <p class="element__description description-text">
+                    Замена полифонического динамика
+                  </p>
+                  <h3 class="element__header">Цена</h3>
+                  <p class="element__description description-price">1 000 ₽</p>
+                  <h3 class="element__header">Срок</h3>
+                  <p class="element__description description-time">
+                    30-120 мин
+                  </p>
+                </div>
+                <button class="element__button">заказать</button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <div class="element__content">
+                  <h3 class="element__header">Ремонтные услуги</h3>
+                  <p class="element__description description-text">
+                    Тестирование с выдачей технического заключения
+                  </p>
+                  <h3 class="element__header">Цена</h3>
+                  <p class="element__description description-price">1 000 ₽</p>
+                  <h3 class="element__header">Срок</h3>
+                  <p class="element__description description-time">
+                    30-120 мин
+                  </p>
+                </div>
+                <button class="element__button">заказать</button>
+              </div>
+            </div>
+
+            <div class="elements__item">
+              <div class="element">
+                <div class="element__content">
+                  <h3 class="element__header">Ремонтные услуги</h3>
+                  <p class="element__description description-text">
+                    Замена программного обеспечения
+                  </p>
+                  <h3 class="element__header">Цена</h3>
+                  <p class="element__description description-price">1 000 ₽</p>
+                  <h3 class="element__header">Срок</h3>
+                  <p class="element__description description-time">
+                    30-120 мин
+                  </p>
+                </div>
+                <button class="element__button">заказать</button>
+              </div>
+            </div>
+          </div>
+          <div class="panel-paginator swiper-pagination"></div>
+        </div>
+        <div class="panel__offer">
+          <p class="panel__offer-text">
+            Все цены указаны с учетом НДС. Стоимость ремонта указана на
+            единичную услугу. Для получения коммерческого предложения на
+            постоянное обслуживание, оставьте заявку.
+          </p>
+          <button class="panel__offert-button button">
+            Получить коммерческое предложение
+          </button>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <p class="footer__creator footer-text">
+            © 2019 CPS<br />
+            Разработано командой Apesong
+          </p>
+        </div>
+        <div class="footer-content">
+          <p class="footer__politic footer-text">Политика конфиденциальности</p>
+        </div>
+        <div class="footer-content">
+          <p class="footer__info footer-text">
+            Информация, размещенная на данной странице, не является публичной
+            офертой
+          </p>
+        </div>
+      </footer>
     </div>
 
     <!-------- MODAL FEEDBACK ------>

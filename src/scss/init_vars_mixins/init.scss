@@ -37,6 +37,21 @@ html {
 
 }
 .page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-inline: auto;
+  min-width: $page-min-width;
+  max-width: $page-max-width;
+  min-height: $page-min-height;
+  padding-bottom: 1rem;
+  background: $background-color;
+}
+.page__content{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   margin-inline: auto;
   min-width: $page-min-width;
   max-width: $page-max-width;
