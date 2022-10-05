@@ -1,6 +1,7 @@
 import "swiper/css/bundle";
 import "../scss/style.scss";
 import Panel from "./panel_module/panel";
+import Modal from "./modals/modal";
 
 let MOBILE_WIDTH = 767;
 
@@ -105,3 +106,17 @@ function sizeReaction() {
 
 document.addEventListener("DOMContentLoaded", sizeReaction);
 window.addEventListener("resize", sizeReaction);
+
+// ------------- MODAL FEEDBACK ---------------------------------------//
+let feedback_button = document.querySelector(".up-menu__button-chat");
+let feedback_button_close = document.querySelector(".feedback-button");
+let feedback_el = document.querySelector(".feedback");
+
+let feedback_modal = new Modal(feedback_el, "feedback--open", "feedback--close");
+
+feedback_button.addEventListener("click",()=>{  
+  feedback_modal.open();
+});
+feedback_button_close.addEventListener("click",()=>{
+  feedback_modal.close();
+});

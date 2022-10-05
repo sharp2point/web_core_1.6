@@ -390,16 +390,16 @@
     </footer>
 
     <!-------- MODAL FEEDBACK ------>
-    <div class="feedback">
+    <div class="feedback feedback--close">
       <div class="feedback__modal modal">
         <header class="modal__header header">
         <button
-          class="mobile-menu__button-close button button_type--circle"
+          class="mobile-menu__button-close feedback-button button button_type--circle"
         ></button>
         <h2 class="header__text">Обратная связь</h2>
       </header>
       <form action="post" class="feedback__form form">
-        <input class="form__input input-name" type="text" placeholder="Имя" required />
+        <input class="form__input input-name" type="text" placeholder="Имя" required autofocus/>
         <input class="form__input input-tel" type="text" placeholder="Телефон" required />
         <input class="form__input input-email" type="text" placeholder="Электронная почта" required />
         <textarea
