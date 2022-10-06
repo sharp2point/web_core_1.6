@@ -16,9 +16,8 @@
     padding-top: 1rem;
     width: 320px;
     height: 100%;
-    background: #fff;
-    box-shadow: 1rem 0 4rem 0 rgba($color: #0e185033, $alpha: 0.2),
-      -2px 0 4px 0 rgba($color: #454f7e, $alpha: 0.02);
+    background: $white-color;
+    @include modal-shadow;
 
     .mobile-menu__header {
       @include display-flex(row);
@@ -53,20 +52,14 @@
       }
       .mobile-menu__tel {
         text-decoration: none;
-        color: #1b1c21;
-        font-size: 24px;
-        font-weight: bold;
-        line-height: 32px;
-        letter-spacing: -0.6px;
+        color: $content-text-color;
+        @include element-font-24;
         cursor: pointer;
       }
       .mobile-menu__mail {
+        @include element-font-16;
         text-decoration: none;
-        color: #1b1c21;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 24px;
-        letter-spacing: -0.2px;
+        color: $content-text-color;
         cursor: pointer;
       }
       .mobile-menu__lang-switcher {
@@ -82,11 +75,8 @@
       }
       .lang-switcher__label {
         content: attr(value);
-        color: #1b1c21;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: -0.2px;
-        font-weight: 500;
+        color: $content-text-color;
+        @include element-font-16;
         cursor: pointer;
         user-select: none;
       }

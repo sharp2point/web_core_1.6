@@ -18,13 +18,14 @@ class ElementWorkSwiper {
   };
 }
 class WorkerSwiper {
-  constructor(swiper_class) {
-    this.swiper_class = swiper_class;
+  constructor(swiper) {
+    this.swiper_class = swiper.host;
     this.host;
     this.wrapper;
     this.paginator;
     this.slider_list = [];
     this.swiper = null;
+    this.width = swiper.width;
   }
   init = () => {
     this.swiper = new Swiper(this.swiper_class, {
@@ -32,6 +33,9 @@ class WorkerSwiper {
       slideToClickedSlide: true,
       slidesPerView: 1,
       spaceBetween: 16,
+     
+      setWrapperSize: true,
+      width: this.width,
       pagination: {
         el: this.paginator.el_class,
         clickable: true,

@@ -31,14 +31,12 @@
   justify-content: space-between;
   margin-inline: 1rem;
   flex-basis: 100%;
-  // border: 1px solid green;
 }
 .up-menu__social-menu {
   @include  display-flex(row);
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  // border: 1px solid fuchsia;
 }
 .up-menu__right {
   @include  display-flex(row);
@@ -47,7 +45,6 @@
   gap: 1rem;
   flex-basis: 100px;
   margin-right: 1rem;
-  // border: 1px solid darkmagenta;
 }
 .up-menu__right::before {
   @include divider-up-menu;

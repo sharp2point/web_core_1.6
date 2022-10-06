@@ -34,18 +34,12 @@
           justify-content: space-between;
           .element__header {
             display: none;
-            font-size: 14px;
-            line-height: 18px;
-            letter-spacing: 0.2px;
-            font-weight: 200;
+            @include element-font-14;
             color: $button-border-color;
           }
           .element__description {
             display: flex;
-            font-size: 14px;
-            font-weight: 200;
-            line-height: 18px;
-            letter-spacing: 0.2px;
+            @include element-font-14;
             color: $content-text-color;
           }
           .description-text {
@@ -60,10 +54,7 @@
         }
 
         .element__button {
-          font-size: 12px;
-          font-weight: 800;
-          line-height: 1.5rem;
-          letter-spacing: -0.15px;
+          @include element-font-12;
           text-align: left;
           text-transform: uppercase;
           width: 119px;
@@ -100,17 +91,12 @@
     gap: 1rem;
     margin: 1rem;
     .panel__offer-text{
-      font-size: 14px;
-      line-height: 20px;
-      letter-spacing: 0.2px;
+      @include element-font-16;
       font-weight: 200;
       color:$content-text-color;
     }
     .panel__offert-button{
-      font-size: 1rem;
-      line-height: 1.5rem;
-      letter-spacing: -0.2px;
-      font-weight: 600;
+      @include element-font-16;
       color:$content-text-color;
       text-align: start;
     }
@@ -160,16 +146,18 @@
       padding-inline: 1rem;
       margin-inline: 1rem;
       gap: 1rem;
+      max-width: 260px * 5;
       .back {
         display: none;
       }
       .elements__item {
+        flex: 1 1 260px;
         .element {
           @include display-flex(row);
           justify-content: center;
           align-items: center;
           flex-wrap: wrap;
-          width: 260px;
+          
           min-height: 180px;
           padding-inline: 1rem;
           border-radius: 0.5rem;
@@ -177,7 +165,6 @@
           .element__content {
             @include display-flex(column);
             justify-content: space-between;
-            
             width: 100%;
             
             padding-bottom: 1rem;

@@ -1,9 +1,7 @@
 .button{
   min-width: fit-content;  
-  font-family: "TT Lakes";
-  font-size: 1rem;
-  line-height: 1.5rem;
-  letter-spacing: -0.2px;
+  @include element-font-16;
+  font-weight: 200;
   background-position: center;
   background-repeat: no-repeat;
   background: transparent;
@@ -36,9 +34,6 @@
     0 0 15px 0px rgba(20, 20, 20, 0.5);
 }
 .button-arrow{
-  font-size: 1rem;
-  line-height: 1.5rem;
-  letter-spacing: -0.2px;
   color: $content-text-color;
 }
 .button-arrow::before{
@@ -111,8 +106,7 @@
 .button_type_text::after{
   position: absolute;
   content: attr(data-name);
-  font-size: 24px;
-  font-weight: bold;
+  @include element-font-24;
   color: #82827e;
   opacity: 0;
   transition: 0.2s;

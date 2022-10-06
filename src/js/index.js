@@ -6,7 +6,11 @@ import Modal from "./modals/modal";
 let MOBILE_WIDTH = 767;
 
 const config_panel_service = {
-  swiper: ".service-swiper",
+  swiper: {
+    host:".service-swiper",
+    width: 240
+  },
+  
   panel: {
     host: ".services-panel .panel__elements",
     panel_switch: "panel__elements-large--close",
@@ -35,7 +39,10 @@ const config_panel_service = {
   },
 };
 const config_panel_technique = {
-  swiper: ".technique-swiper",
+  swiper: {
+    host:".technique-swiper",
+    width: 224
+  },
   panel: {
     host: ".technique-panel .panel__elements",
     panel_switch: "panel__elements-large--close",
@@ -64,7 +71,10 @@ const config_panel_technique = {
   },
 };
 const config_panel_price = {
-  swiper: ".price-swiper",
+  swiper: {
+    host:".price-swiper",
+    width: 265
+  },
   panel: {
     host: ".price-panel .panel__elements",
     panel_switch: "panel__elements-large--close",

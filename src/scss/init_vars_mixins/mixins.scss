@@ -35,7 +35,30 @@
   padding: 0;
   z-index: 1;
 }
-
+@mixin element-font-12 {
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.5rem;
+  letter-spacing: -0.15px;
+}
+@mixin element-font-14 {
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  font-weight: 200;
+}
+@mixin element-font-16 {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  font-weight: 600;
+}
+@mixin element-font-24 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+}
 @mixin modal {
   display: none;
   flex-direction: row;
@@ -49,4 +72,8 @@
   height: 1024px;
   background-color: rgba($color: $white-color, $alpha: 0.6);
   z-index: 10;
+}
+@mixin modal-shadow {
+  box-shadow: 1rem 0 4rem 0 rgba($color: #0e185033, $alpha: 0.2),
+    -2px 0 4px 0 rgba($color: #454f7e, $alpha: 0.02);
 }

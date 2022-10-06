@@ -10,10 +10,9 @@
     @include display-flex(row);
     align-items: center;
     flex-basis: 0 0 30%;
-    font-size: 14px;
-    font-weight: 200;
-    line-height: 1rem;
+    @include element-font-14;
     color: $button-border-color;
+    
     .footer__creator{
         min-width: 218px;
     }

@@ -15,8 +15,7 @@
   gap: 1rem;
   max-width: 440px;
   height: 100%;
-  box-shadow: 1rem 0 4rem 0 rgba($color: #0e185033, $alpha: 0.2),
-    -2px 0 4px 0 rgba($color: #454f7e, $alpha: 0.02);
+  @include modal-shadow;
 
   .header {
     @include display-flex(column);
@@ -63,14 +62,11 @@
       border-color: $button-border-color;
     }
     .form__input::placeholder {
-      font-size: 1rem;
-      line-height: 1.5rem;
-      letter-spacing: -0.2px;
+      @include element-font-16;
       color: $pagination-bullet-active-color;
     }
     .form__agreement {
-      font-size: 14px;
-      line-height: 1rem;
+      @include element-font-14;
       color: $button-border-color;
     }
     .form__link {
@@ -79,10 +75,7 @@
     }
     .form__submit {
       align-self: flex-end;
-      font-size: 12px;
-      font-weight: 800;
-      line-height: 1.5rem;
-      letter-spacing: -0.15px;
+      @include element-font-12;
       text-align: left;
       text-transform: uppercase;
       width: 136px;

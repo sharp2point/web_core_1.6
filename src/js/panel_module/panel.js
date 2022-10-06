@@ -8,7 +8,8 @@ export default function (config) {
     config.panel.host,
     config.panel.panel_switch,
     config.panel.button,
-    config.panel.button_switch
+    config.panel.button_switch,
+    config.swiper
   );
 
   /* --- НАСТРОЙКА ОБЁРТКИ Swiper --- */

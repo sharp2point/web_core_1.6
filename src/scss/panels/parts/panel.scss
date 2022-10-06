@@ -18,13 +18,9 @@
 }
 .panel__header-text {
   text-transform: uppercase;
-  font-family: "TT Lakes";
-  font-size: 1rem;
-  font-weight: 500;
+  @include element-font-16;
   margin: 1rem;
   margin-left: var(--pad-left);
-  line-height: 1.5rem;
-  letter-spacing: -0.2px;
   color: $button-border-color;
 }
 .panel__elements {
