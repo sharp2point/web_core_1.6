@@ -1,4 +1,4 @@
-import Swiper from 'swiper/bundle';
+import Swiper from "swiper/bundle";
 
 class ElementWorkSwiper {
   constructor(el, el_class, mobile_class, large_class) {
@@ -30,16 +30,14 @@ class WorkerSwiper {
   init = () => {
     this.swiper = new Swiper(this.swiper_class, {
       direction: "horizontal",
-      slideToClickedSlide: true,
-      slidesPerView: 1,
+      slidesPerView: "auto",
       spaceBetween: 16,
-     
-      setWrapperSize: true,
-      width: this.width,
+
       pagination: {
         el: this.paginator.el_class,
         clickable: true,
       },
+      autoHeight: true,      
     });
     return this.swiper;
   };
@@ -94,8 +92,9 @@ class WorkerSwiper {
     });
   };
 
-  clear = () => { // очистка от атрибутов swiper
-    if(this.swiper !== null) {
+  clear = () => {
+    // очистка от атрибутов swiper
+    if (this.swiper !== null) {
       this.swiper.destroy(true, true);
     }
     this.host.el.removeAttribute("style");

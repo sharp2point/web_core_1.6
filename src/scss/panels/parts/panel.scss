@@ -5,7 +5,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 1rem;
-  max-width: 1120px;
+  //max-width: 1120px;
   padding-bottom: 1rem;
   @include block-shadow-line;
 }
@@ -31,7 +31,7 @@
 .panel__paginator--hide {
   display: none;
 }
-.panel__button-arrow{
+.panel__button-arrow {
   margin-left: 2rem;
 }
 .panel__elements--large {
@@ -46,15 +46,15 @@
 .panel__elements-large--close {
   height: calc(72px * 2 + 1.2rem);
 }
-.swiper-wrapper {
-  margin-left: var(--pad-left);
-}
 .wrapper-large {
-  @include display-flex(row);
-  flex-wrap: wrap;
-  width: 100%;
+  margin-inline: 1rem;
+  padding: 0;
   height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 1rem 2rem;
+  justify-content: stretch;
   overflow: hidden;
-  padding-inline: var(--pad-left);
 }

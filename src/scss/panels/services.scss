@@ -1,15 +1,25 @@
+.services-panel {
+  display: flex;
+  justify-content: flex-start;
+  
+  .elements__item{
+    flex: 1 1 200px;
+  }
+}
 @media screen and (max-width: $mobile-size) {
   .services-panel {
-    height: 230px;
-
-    .panel__elements {
-      @include display-flex(column);
-      width: 100%;
-      height: 116px;
-      gap: 1rem;
+    
+    .elements__item{
+      display: block;
+      min-width:240px;
+      width: auto;
     }
-    .elements__item {
-      flex: 0 0 240px;
+    .elements__item--fake{
+      display: none;
+    }
+    .panel__elements {
+      display: block;
+      height: 130px;
     }
   }
 }

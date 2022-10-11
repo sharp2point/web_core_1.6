@@ -1,13 +1,4 @@
 
-@media screen and (min-width: 900px) {
-  .services-panel {
-    --pad-left: 2rem;
-    .elements__item {
-      flex: 0 0 22%;
-    }
-  }
-}
-/////////////////////////////////////
 @media screen and (max-width: 350px) {
   .up-menu__left::after {
     display: none;

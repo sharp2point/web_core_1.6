@@ -105,13 +105,13 @@ const config_panel_price = {
 
 let service_panel = Panel(config_panel_service); // блок -> ремонт техники различных брендов
 let technique_panel = Panel(config_panel_technique); // блок -> ремонт различных брендов техники
-let price_panel = Panel(config_panel_price); // блок -> цены на услуги
+// let price_panel = Panel(config_panel_price); // блок -> цены на услуги
 
 function sizeReaction() {
   let is_mobile = window.innerWidth <= MOBILE_WIDTH ? true : false;
   service_panel.sizeReaction(is_mobile);
   technique_panel.sizeReaction(is_mobile);
-  price_panel.sizeReaction(is_mobile);
+  // price_panel.sizeReaction(is_mobile);
 }
 
 document.addEventListener("DOMContentLoaded", sizeReaction);
