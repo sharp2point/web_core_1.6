@@ -7,8 +7,7 @@ let MOBILE_WIDTH = 767;
 
 const config_panel_service = {
   swiper: {
-    host:".service-swiper",
-    width: 240
+    host:".service-swiper"
   },
   
   panel: {
@@ -40,8 +39,7 @@ const config_panel_service = {
 };
 const config_panel_technique = {
   swiper: {
-    host:".technique-swiper",
-    width: 224
+    host:".technique-swiper"
   },
   panel: {
     host: ".technique-panel .panel__elements",
@@ -72,8 +70,7 @@ const config_panel_technique = {
 };
 const config_panel_price = {
   swiper: {
-    host:".price-swiper",
-    width: 265
+    host:".price-swiper"
   },
   panel: {
     host: ".price-panel .panel__elements",
@@ -88,7 +85,7 @@ const config_panel_price = {
   },
   wrapper: {
     host: ".price-panel .wrapper",
-    large: ["wrapper-large__price"],
+    large: [],
     mobile: ["swiper-wrapper"],
   },
   paginate: {
@@ -105,19 +102,23 @@ const config_panel_price = {
 
 let service_panel = Panel(config_panel_service); // блок -> ремонт техники различных брендов
 let technique_panel = Panel(config_panel_technique); // блок -> ремонт различных брендов техники
-// let price_panel = Panel(config_panel_price); // блок -> цены на услуги
+let price_panel = Panel(config_panel_price); // блок -> цены на услуги
 
 function sizeReaction() {
   let is_mobile = window.innerWidth <= MOBILE_WIDTH ? true : false;
   service_panel.sizeReaction(is_mobile);
   technique_panel.sizeReaction(is_mobile);
-  // price_panel.sizeReaction(is_mobile);
+  price_panel.sizeReaction(is_mobile);
 }
 
 document.addEventListener("DOMContentLoaded", sizeReaction);
 window.addEventListener("resize", sizeReaction);
 
-// ------------- MODAL BURGER -----------------------------------------//
+
+// ------------- MODALS -----------------------------------------//
+const page = document.querySelector(".page");
+const page_height = Math.floor(page.getBoundingClientRect().height);
+
 const burger_button = document.querySelector(".up-menu__button-burger");
 const modal_host = document.querySelector(".modal-host");
 const mobile_menu_close_button = document.querySelector(
@@ -126,6 +127,7 @@ const mobile_menu_close_button = document.querySelector(
 
 function open_modal(is_open) {
   if (is_open) {
+    modal_host.style.height = `${page_height}px`;
     modal_host.classList.add("modal-host_open");
   } else {
     modal_host.classList.remove("modal-host_open");

@@ -1,7 +1,6 @@
 .modal-host {
   position: absolute;
   width: 100%;
-  height: 100%;
   top: 0;
   left: -100%;
   background-color: rgba($color: $white-color, $alpha: 0.6);
@@ -11,10 +10,12 @@
   .mobile-menu {
     @include display-flex(column);
     position: sticky;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 1.5rem;
     padding-top: 1rem;
-    width: 320px;
+    min-width: 320px;
+    max-width: 360px;
+    width: 100%;
     height: 100%;
     background: $white-color;
     @include modal-shadow;
@@ -34,15 +35,14 @@
       justify-content: flex-start;
       align-items: flex-start;
       gap: 32px;
-      margin-top: 2rem;
     }
     .mobile-menu__footer {
       @include display-flex(column);
       justify-content: flex-start;
       align-items: flex-start;
       gap: 16px;
+      margin-top: 0.5rem;
       padding-left: 24px;
-      padding-bottom: 40px;
 
       .mobile-menu__footer-menu {
         @include display-flex(row);
@@ -68,7 +68,6 @@
         justify-content: flex-start;
         align-items: center;
         gap: 7px;
-        margin-top: 40px;
       }
       .lang-switcher__radio {
         display: none;
@@ -90,10 +89,22 @@
   left: 0;
   background-color: rgba($color: $white-color, $alpha: 0.6);
 }
-
+@media screen and (min-width: $mobile-size) {
+  .modal-host {
+    .mobile-menu {
+      box-shadow: none;
+      .mobile-menu__footer {
+        margin-top: 241px;
+        .mobile-menu__lang-switcher {
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 1119px) {
   .modal-host {
-    position: absolute;    
+    position: absolute;
   }
 }
 @media screen and (min-width: 1120px) {
@@ -103,10 +114,7 @@
     opacity: 1;
     background-color: $white-color;
     width: 320px;
-    
-    .mobile-menu {
-      box-shadow: none;
-    }
+
     .mobile-menu__button-close {
       display: none;
     }

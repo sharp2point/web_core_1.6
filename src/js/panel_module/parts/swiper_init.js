@@ -32,12 +32,16 @@ class WorkerSwiper {
       direction: "horizontal",
       slidesPerView: "auto",
       spaceBetween: 16,
-
+      mousewheel: true,
+      // keyboard: {
+      //   enabled: true,
+      //   onlyInViewport: false,
+      // },
       pagination: {
         el: this.paginator.el_class,
         clickable: true,
       },
-      autoHeight: true,      
+      autoHeight: true,
     });
     return this.swiper;
   };

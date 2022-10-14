@@ -10,7 +10,10 @@ export default class {
     });
   }
   open() {
+    const page = document.querySelector(".page");
+    const page_height = Math.floor(page.getBoundingClientRect().height);
     this.el.style.display = "flex";
+    this.el.style.height = `${page_height}px`;
     setTimeout(() => {
       this.el.classList.remove(this.close_class);
       this.el.classList.add(this.open_class);
